@@ -1,0 +1,10 @@
+@import 'src/scss/variables';
+
+.featured{
+  text-align: center;
+  background-color: $featured-bgc;
+}
+.featured-container{
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,21 @@
+@import 'src/scss/variables';
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  background-color: $footer-bgc;
+  height: 150px;
+}
+ul{
+  margin: 0;
+  display: flex;
+}
+li{
+  padding: 1rem;
+  list-style: none;
+}
+a{
+  display:inline;
+  text-decoration: none;
+  color: $font-main-color;
+}

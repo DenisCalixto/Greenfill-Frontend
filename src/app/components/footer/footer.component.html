@@ -1,0 +1,45 @@
+<nav class="footer"> 
+
+  <a routerLink="/" class="footer-brand">
+    <img src="../../assets/logo_footer.svg" alt="greenfill">
+  </a>
+
+  <ul class="footer-container">
+    <li class="footer-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/search" class="footer-link">Search</a>
+    </li>
+    <li class="footer-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/info" class="footer-link">What is Zero Waste</a>
+    </li>
+    <li class="footer-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/about" class="footer-link">About Us</a>
+    </li>
+    <li class="footer-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/contact" class="footer-link">Get in Touch</a>
+    </li>
+  </ul> 
+  
+  <ul class="social-container">
+    <li class="social-item">
+      <a href="#" class="social-link">
+        <img src="../../assets/facebook-logo-button.svg" alt="Facebook">
+      </a>
+    </li>
+    <li class="social-item">
+      <a href="#" class="social-link">
+          <img src="../../assets/instagram-logo.svg" alt="Instagram">
+      </a>
+    </li>
+    <li class="social-item">
+      <a href="#" class="social-link">
+          <img src="../../assets/twitter-logo-button.svg" alt="Twitter">
+      </a>
+    </li>
+    <li class="social-item">
+      <a href="#" class="social-link">
+          <img src="../../assets/youtube.svg" alt="YouTube">
+      </a>
+    </li>
+  </ul>   
+  
+</nav>

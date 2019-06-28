@@ -1,0 +1,23 @@
+<nav class="navbar">
+ 
+  <a routerLink="/" class="navbar-brand">
+    <img src="../../assets/logo_header.svg" alt="greenfill">
+  </a>
+  
+  <ul class="navbar-container">
+    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/search" class="nav-link">Search</a>
+    </li>
+    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/info" class="nav-link">What is Zero Waste</a>
+    </li>
+    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/about" class="nav-link">About Us</a>
+    </li>
+    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/contact" class="nav-link">Get in Touch</a>
+    </li>
+  </ul>     
+
+  <button>LOGIN</button>
+</nav>

@@ -1,0 +1,21 @@
+@import 'src/scss/variables';
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+ul{
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+li{
+  padding: 1rem;
+  list-style: none;
+}
+a{
+  display:inline;
+  text-decoration: none;
+  color: $font-main-color;
+}
