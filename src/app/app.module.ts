@@ -13,6 +13,8 @@ import { TrackerComponent } from './components/tracker/tracker.component';
 import { MapLandingComponent } from './components/map-landing/map-landing.component';
 
 import { FeaturedStoreService } from './services/featured-store.service';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FeaturedStoreService } from './services/featured-store.service';
     NewsletterComponent,
     FeaturedComponent,
     TrackerComponent,
-    MapLandingComponent
+    MapLandingComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
