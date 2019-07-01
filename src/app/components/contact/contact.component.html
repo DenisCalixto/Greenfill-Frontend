@@ -1,0 +1,85 @@
+<div class="contact">
+  <div class="contact-form">
+    <h1>GET IN TOUCH</h1>
+    <h2>as easy as being a zero waster!</h2>
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+      <div>
+          <label>What’s your name?</label>
+          <input 
+            type="text" 
+            [(ngModel)]="contact.name"
+            [ngClass]="{'invalid':contactName.errors && contactName.touched}"
+            placeholder="Enter your name…" 
+            name="ContactName"
+            #contactName="ngModel"
+            required
+            minlength="2"
+            >
+            <div [hidden]="!contactName.errors?.required || !contactName.touched" class="invalid-feedback">
+              Name required
+            </div>
+            <div [hidden]="!contactName.errors?.minlength" class="invalid-feedback">
+                Must be at least 2 characters
+            </div>
+      </div>
+      <div>
+          <label>Can we have your e-mail?</label>
+          <input 
+            type="email" 
+            [(ngModel)]="contact.email"
+            [ngClass]="{'invalid':contactEmail.errors && contactEmail.touched}"
+            placeholder="Enter email…" 
+            name="email"
+            #contactEmail="ngModel"
+            required
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            >
+            <div [hidden]="!contactEmail.errors?.required || !contactEmail.touched" class="invalid-feedback">
+                Email required
+            </div>         
+            <div [hidden]="!contactEmail.errors?.pattern" class="invalid-feedback">
+                Email is not valid
+            </div>   
+      </div>
+      <div>
+          <label>What’s this about?</label>
+          <input 
+            type="text" 
+            [(ngModel)]="contact.subject"
+            placeholder="Enter subject" 
+            name="subject">
+      </div>
+      <div>
+          <label>Go ahead, we are listening…</label>
+          <input 
+            type="text" 
+            [(ngModel)]="contact.content"
+            placeholder="Write us a note…" 
+            name="content">
+      </div>
+      <button [disabled]="!contactForm.form.valid">SUBMIT</button>
+    </form>
+  </div>
+  
+  <div class="contact-social">
+    <h1>Also Contact Us Here</h1>
+      <ul class="contact-social-container">
+        <li class="contact-social-item">
+          <a href="#" class="contact-social-link">
+            <img src="../../assets/facebook-logo-button.svg" alt="Facebook">
+          </a>
+        </li>
+        <li class="contact-social-item">
+          <a href="#" class="contact-social-link">
+              <img src="../../assets/instagram-logo.svg" alt="Instagram">
+          </a>
+        </li>
+        <li class="contact-social-item">
+          <a href="#" class="contact-social-link">
+              <img src="../../assets/twitter-logo-button.svg" alt="Twitter">
+          </a>
+        </li>
+      </ul>
+  </div>  
+</div>

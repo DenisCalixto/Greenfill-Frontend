@@ -1,11 +1,5 @@
 @import 'src/scss/variables';
 
-.newsletter{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-
 .invalid, .invalid-feedback{
   color: $font-contact-invalid-color;
 }

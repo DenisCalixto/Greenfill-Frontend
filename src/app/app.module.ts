@@ -1,6 +1,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/Forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { TrackerComponent } from './components/tracker/tracker.component';
 import { MapLandingComponent } from './components/map-landing/map-landing.component';
 
 import { FeaturedStoreService } from './services/featured-store.service';
+import { AboutService } from './services/about.service';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +27,16 @@ import { FeaturedStoreService } from './services/featured-store.service';
     NewsletterComponent,
     FeaturedComponent,
     TrackerComponent,
-    MapLandingComponent
+    MapLandingComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
-  providers: [FeaturedStoreService],
+  providers: [FeaturedStoreService, AboutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
