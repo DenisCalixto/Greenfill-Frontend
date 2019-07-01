@@ -1,0 +1,5 @@
+@import 'src/scss/variables';
+
+.invalid, .invalid-feedback{
+  color: $font-contact-invalid-color;
+}

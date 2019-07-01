@@ -5,7 +5,22 @@
   <div class="news-text">
     <h1>Get the latest zero waste updates</h1>
     <p>Get our monthly newsletter and be in the loop.</p>
-    <input type="email" name="email" placeholder="Enter email to get started...">
-    <button>Get Monthly Newsletter</button>
+    <form #newsForm="ngForm" (ngSubmit)="onSubmit(newsForm)">
+      <div>
+        <input 
+          type="email"
+          [(ngModel)]="newsletter.email"
+          [ngClass]="{'invalid':newsletterEmail.errors && newsletterEmail.touched}" 
+          name="email" 
+          #newsletterEmail="ngModel"
+          placeholder="Enter email to get started..."
+          required
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+        >
+        <button>Get Monthly Newsletter</button>   <div [hidden]="!newsletterEmail.errors?.pattern || !newsletterEmail.touched" class="invalid-feedback">
+            Email is not valid
+        </div>
+      </div>
+    </form>
   </div>
 </div>

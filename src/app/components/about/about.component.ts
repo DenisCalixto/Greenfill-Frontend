@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AboutService } from '../../services/about.service';
+import { About } from '../../models/About';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  about: About = {
+    name: '',
+    role: '',
+    info: '',
+    image: ''
+  }
+  webView: boolean = true;
+
+  abouts: About[];
+
+  constructor(private aboutService: AboutService) { }
 
   ngOnInit() {
+    this.abouts = this.aboutService.getAbouts();
+    
+    if (window.innerWidth < 750) {
+      return this.webView = false;
+    }    
   }
-
 }
