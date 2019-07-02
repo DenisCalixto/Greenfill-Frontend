@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/Forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -15,8 +16,11 @@ import { MapLandingComponent } from './components/map-landing/map-landing.compon
 
 import { FeaturedStoreService } from './services/featured-store.service';
 import { AboutService } from './services/about.service';
+import { InfoService } from './services/info.service';
+
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +33,15 @@ import { AboutComponent } from './components/about/about.component';
     TrackerComponent,
     MapLandingComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [FeaturedStoreService, AboutService],
+  providers: [FeaturedStoreService, InfoService, AboutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

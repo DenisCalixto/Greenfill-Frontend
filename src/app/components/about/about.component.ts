@@ -23,9 +23,6 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.abouts = this.aboutService.getAbouts();
-    
-    if (window.innerWidth < 750) {
-      return this.webView = false;
-    }    
+     
   }
 }

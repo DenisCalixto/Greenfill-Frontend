@@ -1,0 +1,30 @@
+<div class="info">
+  <div class="steps-container">
+    <h1>WHAT IS ZERO WASTE?</h1>
+    <p>Zero Waste could be done easily within these 5R steps: Refuse, Reduce, Reuse, Recycle and Rot.</p>
+    <div class="steps-image">
+      <img src="../../assets/img_zero_waste_banner_s.svg" alt="">
+    </div>
+  </div>
+    
+  <div class="items-container">
+    <ul>
+      <div *ngFor="let info of infos; let i=index;">
+        <li id="{{ info.id }}" (click)="showCard[i] = !showCard[i]">
+          <img [src]="info.image" alt="">
+        </li>
+        <div class="item-card-container" *ngIf="showCard[i]">
+            <div class="item-card-image"> 
+              <img [src]="info.cardImage" alt="">
+            </div> 
+            <div class="item-card-text">{{ info.text }}</div>
+            <div class="item-card-icons">
+              <img (click)="showCard[i] = !showCard[i]" src="../../assets/ic_arrow_up.svg" alt="">
+              <img src="../../assets/ic_recycle.svg" alt="">
+              <img src="../../assets/ic_reduce.svg" alt="">
+            </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
