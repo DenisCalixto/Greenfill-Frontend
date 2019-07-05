@@ -23,6 +23,7 @@ import { AboutComponent } from './components/about/about.component';
 import { InfoComponent } from './components/info/info.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AboutComponent,
     InfoComponent,
     AuthComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
