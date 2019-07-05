@@ -1,9 +1,9 @@
 <nav class="navbar">
- 
+
   <a routerLink="/" class="navbar-brand">
     <img src="../../assets/logo_header.svg" alt="greenfill">
   </a>
-  
+
   <ul class="navbar-container">
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
       <a routerLink="/search" class="nav-link">Search</a>
@@ -17,7 +17,7 @@
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
       <a routerLink="/contact" class="nav-link">Get in Touch</a>
     </li>
-  </ul>     
+  </ul>
 
-  <button>LOGIN</button>
+  <button routerLink="/login">LOGIN</button>
 </nav>
