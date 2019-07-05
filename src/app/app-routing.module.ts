@@ -6,6 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: AuthComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'search', component: SearchComponent}
 ];
 
 @NgModule({
