@@ -21,6 +21,7 @@ import { InfoService } from './services/info.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { InfoComponent } from './components/info/info.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InfoComponent } from './components/info/info.component';
     MapLandingComponent,
     ContactComponent,
     AboutComponent,
-    InfoComponent
+    InfoComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
