@@ -11,9 +11,9 @@ export class ContactComponent implements OnInit {
     name: '',
     email: '',
     subject: '',
-    content: '' 
+    content: ''
   }
-  @ViewChild('contactForm') form: any;
+  @ViewChild('contactForm', {static: true}) form: any;
 
   constructor() { }
 
