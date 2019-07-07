@@ -1,26 +1,32 @@
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg">
 
   <a routerLink="/" class="navbar-brand">
     <img src="../../assets/logo_header.svg" alt="greenfill">
   </a>
-
-  <ul class="navbar-container">
-    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-      <a routerLink="/search" class="nav-link">Search</a>
-    </li>
-    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-      <a routerLink="/info" class="nav-link">What is Zero Waste</a>
-    </li>
-    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-      <a routerLink="/about" class="nav-link">About Us</a>
-    </li>
-    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-      <a routerLink="/contact" class="nav-link">Get in Touch</a>
-    </li>
-    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-      <a routerLink="/dashboard" class="nav-link">Dashboard</a>
-    </li>
-  </ul>
-
-  <button routerLink="/login">LOGIN</button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+    <span class="navbar-toggler-icon">
+      <img src="../../assets/ic_hamburger.svg" alt="greenfill">
+    </span>    
+  </button>
+  
+  <div class="collapse navbar-collapse" [ngbCollapse]="!isNavbarCollapsed" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/search" class="nav-link" (click)="isNavbarCollapsed = true">Search</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/info" class="nav-link" (click)="isNavbarCollapsed = true">What is Zero Waste</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/about" class="nav-link" (click)="isNavbarCollapsed = true">About Us</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/contact" class="nav-link" (click)="isNavbarCollapsed = true">Get in Touch</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/dashboard" class="nav-link" (click)="isNavbarCollapsed = true">Dashboard</a>
+      </li>
+    </ul>
+    <button routerLink="/login">LOGIN</button>
+  </div>  
 </nav>

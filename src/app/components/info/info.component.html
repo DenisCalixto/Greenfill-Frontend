@@ -8,23 +8,23 @@
   </div>
     
   <div class="items-container">
-    <ul>
-      <div *ngFor="let info of infos; let i=index;">
-        <li id="{{ info.id }}" (click)="showCard[i] = !showCard[i]">
+    <ngb-accordion [closeOthers]="true" activeIds="static-0">
+      <ngb-panel *ngFor="let info of infos; let i=index;" id="static-{{ info.id }}">
+        <ng-template ngbPanelTitle>
           <img [src]="info.image" alt="">
-        </li>
-        <div class="item-card-container" *ngIf="showCard[i]">
+        </ng-template>
+        <ng-template ngbPanelContent>
             <div class="item-card-image"> 
               <img [src]="info.cardImage" alt="">
             </div> 
             <div class="item-card-text">{{ info.text }}</div>
             <div class="item-card-icons">
-              <img (click)="showCard[i] = !showCard[i]" src="../../assets/ic_arrow_up.svg" alt="">
+              <img src="../../assets/ic_arrow_up.svg" alt="">
               <img src="../../assets/ic_recycle.svg" alt="">
               <img src="../../assets/ic_reduce.svg" alt="">
             </div>
-        </div>
-      </div>
-    </ul>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
   </div>
 </div>
