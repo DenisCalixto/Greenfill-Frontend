@@ -12,7 +12,7 @@ export class NewsletterComponent implements OnInit {
     email: ''
   }
 
-  @ViewChild('newsForm') form: any;
+  @ViewChild('newsForm', {static: true}) form: any;
 
   constructor() { }
 
