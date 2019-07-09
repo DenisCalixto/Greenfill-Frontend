@@ -1,7 +1,7 @@
 Login
 <br>
 Track your progress bla bla bla...
-<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
   <div>
     <label for="email">E-Mail</label>
         <input
@@ -38,3 +38,10 @@ Track your progress bla bla bla...
         </button>
   </div>
 </form>
+    <div class="alert alert-danger" *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
+    <div *ngIf="isLoading" style="text-align: center;">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+

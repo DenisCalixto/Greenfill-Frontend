@@ -26,6 +26,7 @@ import { InfoComponent } from './components/info/info.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoadingSpinnerComponent } from './components/shared/shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SearchComponent } from './components/search/search.component';
     InfoComponent,
     AuthComponent,
     DashboardComponent,
-    SearchComponent
+    SearchComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
