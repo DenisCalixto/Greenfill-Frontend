@@ -1,8 +1,9 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/Forms';
+import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { InfoComponent } from './components/info/info.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoadingSpinnerComponent } from './components/shared/shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -41,11 +43,13 @@ import { SearchComponent } from './components/search/search.component';
     InfoComponent,
     AuthComponent,
     DashboardComponent,
-    SearchComponent
+    SearchComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule
   ],
