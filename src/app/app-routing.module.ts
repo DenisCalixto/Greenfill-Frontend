@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
+import { CanadaProgressChartComponent } from './components/canada-progress-chart/canada-progress-chart.component';
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: AuthComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'search', component: SearchComponent}
+  {path: 'search', component: SearchComponent},
+  {path: 'canada-progress-chart', component: CanadaProgressChartComponent}
 ];
 
 @NgModule({
