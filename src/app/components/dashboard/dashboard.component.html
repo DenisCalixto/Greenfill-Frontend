@@ -63,7 +63,9 @@
           <img src="../../assets/ic_total.svg" alt="">
         </div>
         <div>
-          <span>300</span><span>Total Packaging</span>
+          <span *ngIf="totalPackaging">{{ totalPackaging.total }}</span>
+          <span *ngIf="!totalPackaging">0</span>
+          <span>Total Packaging</span>
         </div>
         <div>
           diverted from the bla bla bla
