@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ChartsModule } from 'ng2-charts';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -27,6 +28,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoadingSpinnerComponent } from './components/shared/shared/loading-spinner/loading-spinner.component';
+import { CanadaProgressChartComponent } from './components/canada-progress-chart/canada-progress-chart.component';
 
 @NgModule({
   declarations: [
@@ -44,14 +46,16 @@ import { LoadingSpinnerComponent } from './components/shared/shared/loading-spin
     AuthComponent,
     DashboardComponent,
     SearchComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    CanadaProgressChartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ChartsModule
   ],
   providers: [FeaturedStoreService, InfoService, AboutService],
   bootstrap: [AppComponent]
