@@ -29,6 +29,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoadingSpinnerComponent } from './components/shared/shared/loading-spinner/loading-spinner.component';
 import { CanadaProgressChartComponent } from './components/canada-progress-chart/canada-progress-chart.component';
+import { UserProgressChartComponent } from './components/user-progress-chart/user-progress-chart.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CanadaProgressChartComponent } from './components/canada-progress-chart
     DashboardComponent,
     SearchComponent,
     LoadingSpinnerComponent,
-    CanadaProgressChartComponent
+    CanadaProgressChartComponent,
+    UserProgressChartComponent
   ],
   imports: [
     BrowserModule,
