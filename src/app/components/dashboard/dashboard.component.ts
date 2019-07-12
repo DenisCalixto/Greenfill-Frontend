@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-
+import { Leader } from '../../models/leader';
 import { TotalPackaging } from '../../models/TotalPackaging';
 import { AuthService } from '../auth/auth.service';
 
@@ -12,6 +12,8 @@ import { AuthService } from '../auth/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
+  leaders: Leader[] = [];
+
   totalPackaging: TotalPackaging;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
@@ -19,6 +21,26 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     // Send Http request
     this.fetchTotalPackaging();
+    this.fetchLeaders();
+  }
+
+  private fetchLeaders() {
+    this.http
+      .get<Leader[]>('http://greenfill.deniscalixto.wmdd.ca/leaderboard')
+      .pipe(
+        map(responseData => {
+          const leadersArray: Leader[] = [];
+          for (const key in responseData) {
+            leadersArray.push({...responseData[key]});
+          } 
+          return leadersArray;
+        })
+      )
+      .subscribe(resData => {
+        for(const key in resData[0]) {
+          this.leaders.push(resData[0][key]);
+        }
+      });
   }
 
   private fetchTotalPackaging() {
