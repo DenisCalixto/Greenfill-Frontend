@@ -9,7 +9,7 @@
     </span>
   </button>
 
-  <div class="collapse navbar-collapse" [ngbCollapse]="!isNavbarCollapsed" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" [ngbCollapse]="!isNavbarCollapsed" id="navbarSupportedContent" (click)="isNavbarCollapsed = !isNavbarCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a routerLink="/search" class="nav-link" (click)="isNavbarCollapsed = true">Search</a>
