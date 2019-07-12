@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-import { TotalPackaging } from './total-packaging.model';
+import { TotalPackaging } from '../../models/TotalPackaging';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,19 +12,21 @@ import { TotalPackaging } from './total-packaging.model';
 })
 export class DashboardComponent implements OnInit {
 
-  totalPackaging;
+  totalPackaging: TotalPackaging;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   ngOnInit(): void {
     // Send Http request
-    this.fetchTotalPackaging(10);
+    this.fetchTotalPackaging();
   }
 
-  private fetchTotalPackaging(idPerson) {
+  private fetchTotalPackaging() {
     this.http
-      .get<{[key: string]: TotalPackaging }>('http://greenfill.deniscalixto.wmdd.ca/person/' + idPerson + '/totalpackaging')
+      .get<TotalPackaging>('http://greenfill.deniscalixto.wmdd.ca/person/' + this.authService.userId + '/totalpackaging')
       .subscribe(totalItem => {
         this.totalPackaging = totalItem;
       });
-  }}
+  }
+
+}
