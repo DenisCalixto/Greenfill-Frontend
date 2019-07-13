@@ -3,8 +3,71 @@
 .tracker{
   text-align: center;
 }
-.tracker-container{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+
+.tracker-item{
+  margin-top: 50px;
+  display: grid;
+}
+
+.tracker-text {
+  max-width: 280px;
+}
+
+// .tracker-container{
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: center;
+// }
+
+.tracker-container {
+  display: grid;
+  justify-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h1 {
+  font-family: $main-font;
+  font-weight: lighter;
+  font-size: 30pt;
+  padding: 50px 10% 0px 10%;
+  color: $font-main-color;
+}
+
+p {
+  font-family: $body-font;
+  font-size: 16pt;
+  font-weight: lighter;
+  color: $font-color3;
+  padding: 30px 10% 20px 10%;
+}
+
+h2 {
+  font-family: $main-font;
+  font-weight: lighter;
+  font-size: 20pt;
+  padding: 30px 10% 20px 10%;
+  // max-width: 680px;
+  display: grid;
+}
+
+.primaryBtn {
+  background-color: $font-color1;
+  color: white;
+  font-family: $body-font;
+  font-size: 16pt;
+  font-weight: lighter;
+  border: 0px;
+  padding: 17px 100px;
+  border-radius: 12px;
+  margin-bottom: 100px;
+  box-shadow: 0px 2px 10px #6DA34050
+}
+
+// Media Query
+
+@media screen and (min-width: 800px) {
+  .tracker-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

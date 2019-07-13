@@ -1,11 +1,113 @@
 @import 'src/scss/variables';
 
-.newsletter{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+// .newsletter{
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: center;
+//   margin-bottom: 100px;
+// }
+
+.newsletter {
+  display: grid;
+  justify-items: center;
+  margin: 100px 10% 100px 10%;
+  text-align: center;
+}
+
+.news-img {
+  grid-row-start: 2;
+  margin-bottom: 50px;
 }
 
 .invalid, .invalid-feedback{
   color: $font-contact-invalid-color;
+}
+
+h1 {
+  font-family: $main-font;
+  font-weight: lighter;
+  font-size: 30pt;
+  // padding: 50px 6% 0px 10%;
+  color: $font-main-color;
+}
+
+p {
+  font-family: $body-font;
+  font-size: 16pt;
+  font-weight: lighter;
+  color: $font-color3;
+  padding: 20px 10% 20px 10%;
+}
+
+input {
+  border: 1px solid $field_border;
+  font-family: $body-font;
+  font-weight: lighter;
+  padding: 17px 20px;
+  border-radius: 12px;
+  font-size: 16pt;
+  color: $font-main-color;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.support1Btn {
+  background-color: transparent;
+  color: $font-color2;
+  font-family: $body-font;
+  font-size: 16pt;
+  font-weight: lighter;
+  border: 2px solid $card_border;
+  padding: 17px 26px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+// Media Query
+
+@media screen and (min-width: 1000px) {
+  .newsletter {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template: 1fr 1fr;
+  }
+
+  .news-img {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin-bottom: 50px;
+  }
+
+  .news-text {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    text-align: left;
+  }
+
+  p {
+    padding-left: 0px;
+    padding-top: 6px;
+  }
+
+  .news-form, form {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    justify-content: center;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  } 
+
+  input {
+    min-width: 400px;
+  }
+
+  .support1Btn {
+    margin-top: 0px;
+    height: 67px;
+    padding: 17px 10px;
+    width: 250px;
+  }
 }

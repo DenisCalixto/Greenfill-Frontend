@@ -16,25 +16,34 @@ export class CanadaProgressChartComponent implements OnInit {
   //   responsive: true
   // };
 
-  public canadaProgressChartLabels = ['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2020'];
+  public canadaProgressChartLabels = ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2020'];
   public canadaProgressChartType = 'line';
   public canadaProgressChartLegend = false;
   public canadaProgressChartData = [
-    {data: [16, 15.5, 15, 14, 12, 11, 10, 9, 8, 6, 5], label: 'Series A',
-     pointRadius: 7, pointBorderColor: 'lightgreen', pointBorderWidth: 4,
-     pointBackgroundColor: 'green'}
+    {data: [480000, , , 428000, 423600, 394600, 370000, 351000, 371000, ], label: 'tonnes',
+     pointRadius: 7, pointBorderColor: '#43C1B366', pointBorderWidth: 12,
+     pointBackgroundColor: '#43C1B3'}
   ];
 
   public canadaProgressChartColors: Color[] = [
     {
-      borderColor: 'green',
+      borderColor: '#43C1B3',
       backgroundColor: 'transparent',
     },
   ];
 
   public canadaProgressChartOptions: (ChartOptions) = {
     responsive: true,
-    aspectRatio: 5,
+    // aspectRatio: 5,
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+          left: 0,
+          right: 0,
+          top: 30,
+          bottom: 0
+        }
+    },
     scales: {
       xAxes: [{
         display: true,
@@ -52,7 +61,7 @@ export class CanadaProgressChartComponent implements OnInit {
         },
         gridLines: {
           drawBorder: false,
-          color: ['green', 'transparent', 'transparent', 'green', 'transparent', 'transparent', 'green']
+          color: ['#D7F7F3', 'transparent', 'transparent', '#D7F7F3', 'transparent', 'transparent', '#D7F7F3']
         },
       }]
     }

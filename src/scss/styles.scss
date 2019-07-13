@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import './variables';
 
+/*Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i&display=swap');
+
 body{
   margin: 0; 
   color: $font-main-color;
