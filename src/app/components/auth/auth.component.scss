@@ -1,2 +1,140 @@
 @import 'src/scss/variables';
 
+//Typography
+
+h1 {
+    font-family: $main-font;
+    color: $font-color1;
+    font-size: 40pt;
+    font-weight: lighter;
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 50px;
+  }
+  
+  h2 {
+    font-family: $body-font;
+    color: $font-color3;
+    font-size: 20pt;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 2px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+  }
+
+  //Login
+
+  form {
+      //display: grid;
+      justify-content: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      background-color: $support-bgc1;
+      -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.16);
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 20px;
+      margin-bottom: 60px;
+  }
+
+
+  label {
+    display: block;
+    font-size: 16pt;
+    font-family: $body-font;
+    color: $font-color3;
+    font-weight: 400;
+  }
+
+  input {
+    //border-radius: 12px;
+    font-size: 16pt;
+    color: $font-imput;
+    font-family: $body-font;
+    font-weight: 300;
+    font-style: italic;
+    padding: 17px 17px 20px;
+    border-radius: 12px;
+    border: 1px solid $field_border;
+    width: 100%;
+
+  }
+
+  .email {
+      margin-top: 50px;
+      padding-top: 30px;
+  }
+
+  #email {
+    margin-bottom: 30px;
+  }
+
+  .button {
+    display: grid;
+    justify-content: center;
+  }
+
+  #login {
+    background-color: $button-color1;
+    color: $font-color4;
+    font-family: $body-font;
+    font-size: 16pt;
+    font-weight: lighter;
+    border-radius: 12px;
+    border: 0px; 
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(109,163,64,0.5);
+    padding: 17px 100px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  #switch {
+    background-color: $button-color1;
+    color: $font-color4;
+    font-family: $body-font;
+    font-size: 16pt;
+    font-weight: lighter;
+    border-radius: 12px;
+    border: 0px; 
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(109,163,64,0.5);
+    padding: 17px 55px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 799px) {
+    h1 {
+      font-size: 40px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    label {
+      font-size: 16px;
+    }
+  
+    #login {
+      font-size: 20px;
+    }
+
+    #switch {
+       font-size: 20px;
+      }
+    
+    form {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    form {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+
