@@ -1,109 +1,71 @@
 <div>
-  <form action="">
-    <input type="text" placeholder="Search for zero waste store or items…">
+  <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+    <input type="text" id="searchText" name="searchText" 
+      ngModel required 
+      placeholder="Search for zero waste store or items…">>
+    <button class="search-btn" type="submit" text="GO" 
+      [disabled]="!searchForm.valid">
+      <img src="../../assets/ic_search_btn.svg" alt="">
+    </button>
   </form>
-</div>
-<div class="searchComponent">
-  <div class="leftPanel">
-    <div class="storeInfo">
-      <div>
-        <div>
-          NADA
-        </div>
-        <div>
-          <img src="../../assets/ic_pin.png" alt="">
-          675 E Broadway, Vancouver, BC V5T 1X7
-        </div>
-        <div>
-          <span>
-            <img src="../../assets/ic_pin.png" alt="">
-          </span>
-          <span>
-            Weekday 8a.m. - 8p.m.
-            <br>
-            Weekend 9a.m. - 8p.m.
-          </span>
-        </div>
-      </div>
-      <div>
-        <img src="../../assets/store_s1.png" alt="">
-      </div>
-    </div>
-    <div class="storeInfo">
-      <div>
-        <div>
-          The Soap Dispensary
-        </div>
-        <div>
-          <img src="../../assets/ic_pin.png" alt="">
-          675 E Broadway, Vancouver, BC V5T 1X7
-        </div>
-        <div>
-          <span>
-            <img src="../../assets/ic_pin.png" alt="">
-          </span>
-          <span>
-            Weekday 8a.m. - 8p.m.
-            <br>
-            Weekend 9a.m. - 8p.m.
-          </span>
-        </div>
-      </div>
-      <div>
-        <img src="../../assets/store_s2.png" alt="">
-      </div>
-    </div>
-    <div class="storeInfo">
-      <div>
-        <div>
-          The Soap Dispensary
-        </div>
-        <div>
-          <img src="../../assets/ic_pin.png" alt="">
-          675 E Broadway, Vancouver, BC V5T 1X7
-        </div>
-        <div>
-          <span>
-            <img src="../../assets/ic_pin.png" alt="">
-          </span>
-          <span>
-            Weekday 8a.m. - 8p.m.
-            <br>
-            Weekend 9a.m. - 8p.m.
-          </span>
-        </div>
-      </div>
-      <div>
-        <img src="../../assets/store_s3.png" alt="">
-      </div>
-    </div>
-    <div class="storeInfo">
-      <div>
-        <div>
-          The Soap Dispensary
-        </div>
-        <div>
-          <img src="../../assets/ic_pin.png" alt="">
-          675 E Broadway, Vancouver, BC V5T 1X7
-        </div>
-        <div>
-          <span>
-            <img src="../../assets/ic_pin.png" alt="">
-          </span>
-          <span>
-            Weekday 8a.m. - 8p.m.
-            <br>
-            Weekend 9a.m. - 8p.m.
-          </span>
-        </div>
-      </div>
-      <div>
-        <img src="../../assets/store_s4.png" alt="">
-      </div>
-    </div>
   </div>
-  <div class="rightPanel">
-      <iframe width="800" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Langara&output=embed"
-        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+  <div class="search">
+    <div class="left-panel">
+      <div *ngFor="let search of searchs" class="store-info">
+          <div class="store-text">
+            <h2>{{ search.name }}</h2>
+            <!-- <div>
+              <img src="../../assets/ic_pin_green.svg" alt="">
+              <p>{{ search.address }}</p>
+            </div>
+            <div>
+              <img src="../../assets/ic_schedule.svg" alt="">
+              <p>{{ search.weekdayHours }}</p><br>
+              <p>{{ search.weekendHours }}</p>
+            </div> -->
+          </div>
+          <!-- <div class="store-img">
+              <img [src]="search.image" alt="">
+          </div> -->
+      </div>
+    </div>
+    <div class="right-panel">
+      <!-- <app-search-single></app-search-single>  -->
+      <!-- <div class="search-single">
+          <div class="single-img">
+            <img [src]="search.imageBig" alt="">
+          </div> 
+          <div class="single-text">
+            <a href="#">go back to map</a>
+            <div>
+              <h2>{{ search.name }}</h2>
+              <img src="../../assets/ic_carrot.svg" alt="">
+            </div>
+            <div>
+              <img src="../../assets/ic_pin_green.svg" alt="">
+              <p>{{ search.address }}</p>
+            </div>
+            <div>
+              <img src="../../assets/ic_website_green.svg" alt="">
+              <p>{{ search.website }}</p>
+            </div>
+            <div>
+              <img src="../../assets/ic_phone_green.svg" alt="">
+              <p>{{ search.phone }}</p>
+            </div>
+            <div>
+              <img src="../../assets/ic_schedule.svg" alt="">
+              <p>{{ search.weekdayHours }}/{{ search.weekendHours }}</p>
+            </div>
+            <div>
+              <p>{{ search.text }}</p>
+            </div>
+        </div> 
+      </div> -->
+    </div>
+        <!-- <div class="search-map">
+        <iframe width="800" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Langara&output=embed"
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      </div>     -->
+
   </div>
-</div>

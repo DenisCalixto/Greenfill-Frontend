@@ -20,6 +20,7 @@ import { MapLandingComponent } from './components/map-landing/map-landing.compon
 import { FeaturedStoreService } from './services/featured-store.service';
 import { AboutService } from './services/about.service';
 import { InfoService } from './services/info.service';
+import { SearchService } from './services/search.service';
 
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
@@ -59,7 +60,7 @@ import { UserProgressChartComponent } from './components/user-progress-chart/use
     NgbModule,
     ChartsModule
   ],
-  providers: [FeaturedStoreService, InfoService, AboutService],
+  providers: [FeaturedStoreService, InfoService, AboutService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
