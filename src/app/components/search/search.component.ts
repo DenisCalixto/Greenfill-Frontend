@@ -12,7 +12,7 @@ import { Store } from 'src/app/models/Store';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
 
   constructor(private searchService: SearchService, private router: Router) {}
 
@@ -21,16 +21,27 @@ export class SearchComponent {
 
   searchs: Search[] = [];
 
+  ngOnInit(): void {
+    if (history.state.data) {
+      // console.log(history.state.data['searchedText']);
+      this.search(history.state.data['searchedText']);
+    }
+  }
+
   onSubmit(form: NgForm) {
 
-    //test if form is valid in terms of security
+    // test if form is valid in terms of security
     if (!form.valid) {
       return;
     }
 
     // storing the search text typed by the user
-    const searchText = form.value.searchText;
+    this.search(form.value.searchText);
 
+    form.reset();
+  }
+
+  private search(searchText) {
     // Observable which is going to wait for the service
     // to return something from the API
     let searchObs: Observable<Search[]>;
@@ -47,8 +58,6 @@ export class SearchComponent {
         console.log(errorMessage);
       }
     );
-
-    form.reset();
   }
 
   loadStore(storeId) {
