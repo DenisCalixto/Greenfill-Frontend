@@ -2,4 +2,8 @@
   <p>
       map-landing works!
   </p>
+  <form #landingSearchForm="ngForm">
+    <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required>
+    <button (click)="onTextSearched()">Send Search</button>
+  </form>
 </div>
