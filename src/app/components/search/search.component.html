@@ -1,9 +1,9 @@
 <div>
   <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
-    <input type="text" id="searchText" name="searchText" 
-      ngModel required 
+    <input type="text" id="searchText" name="searchText"
+      ngModel required
       placeholder="Search for zero waste store or items…">>
-    <button class="search-btn" type="submit" text="GO" 
+    <button class="search-btn" type="submit" text="GO"
       [disabled]="!searchForm.valid">
       <img src="../../assets/ic_search_btn.svg" alt="">
     </button>
@@ -13,7 +13,7 @@
     <div class="left-panel">
       <div *ngFor="let search of searchs" class="store-info">
           <div class="store-text">
-            <h2>{{ search.name }}</h2>
+            <a (click)="loadStore(search.id)">{{ search.name }}</a>
             <!-- <div>
               <img src="../../assets/ic_pin_green.svg" alt="">
               <p>{{ search.address }}</p>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="right-panel">
-      <!-- <app-search-single></app-search-single>  -->
+      <app-search-single></app-search-single>
     </div>
         <!-- <div class="search-map">
         <iframe width="800" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Langara&output=embed"

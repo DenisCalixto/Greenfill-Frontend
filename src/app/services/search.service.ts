@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, tap, map } from 'rxjs/operators';
 import { throwError, Subject } from 'rxjs';
+import { Store } from '../models/Store';
 
 export interface Search {
   id: string;
@@ -26,29 +27,29 @@ export class SearchService {
         catchError(this.handleError),
         map(responseData => {
           const leadersArray: Search[] = [];
+          // tslint:disable-next-line: forin
           for (const key in responseData) {
             leadersArray.push({...responseData[key]});
-          } 
+          }
           return leadersArray;
         })
       );
   }
 
-  private handleSearchResults(results) {
-    // console.log(results);
+  fetchStore(storeId: string) {
+    return this.http
+      .get<Store>(
+        'http://greenfill.deniscalixto.wmdd.ca/company/' + storeId
+      )
+      .pipe(
+        catchError(this.handleError),
+        map(responseData => {
+          let store = new Store();
+          store = responseData['company'];
+          return store;
+        })
+      );
   }
-
-  // private handleAuthentication(
-  //   email: string,
-  //   userId: string,
-  //   token: string,
-  //   expiresIn: number
-  // ) {
-  //   const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-  //   const user = new User(email, userId, token, expirationDate);
-  //   this.userId = userId;
-  //   this.user.next(user);
-  // }
 
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';

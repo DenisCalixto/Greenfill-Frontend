@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Store } from 'src/app/models/Store';
 
 @Component({
   selector: 'app-search-single',
   templateUrl: './search-single.component.html',
   styleUrls: ['./search-single.component.scss']
 })
-export class SearchSingleComponent implements OnInit {
+export class SearchSingleComponent {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  search: Store;
 
 }

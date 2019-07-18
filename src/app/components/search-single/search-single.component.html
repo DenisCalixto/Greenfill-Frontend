@@ -1,7 +1,7 @@
-<div class="search-single">
+<div *ngIf="search" class="search-single">
   <div class="single-img">
-    <img [src]="search.imageBig" alt="">
-  </div> 
+    <!-- <img [src]="search.imageBig" alt=""> -->
+  </div>
   <div class="single-text">
     <a href="#">go back to map</a>
     <div>
@@ -20,12 +20,12 @@
       <img src="../../assets/ic_phone_green.svg" alt="">
       <p>{{ search.phone }}</p>
     </div>
-    <div>
+    <!-- <div>
       <img src="../../assets/ic_schedule.svg" alt="">
       <p>{{ search.weekdayHours }}/{{ search.weekendHours }}</p>
     </div>
     <div>
       <p>{{ search.text }}</p>
-    </div>
-</div> 
+    </div> -->
+</div>
 </div>
