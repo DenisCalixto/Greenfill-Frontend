@@ -5,8 +5,8 @@
 
     <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
       <div>
-          <label>What’s your name?</label>
-          <input 
+          <label class="name">What’s your name?</label>
+          <input class="name2" 
             type="text" 
             [(ngModel)]="contact.name"
             [ngClass]="{'invalid':contactName.errors && contactName.touched}"
@@ -25,7 +25,7 @@
       </div>
       <div>
           <label>Can we have your e-mail?</label>
-          <input 
+          <input class="email"
             type="email" 
             [(ngModel)]="contact.email"
             [ngClass]="{'invalid':contactEmail.errors && contactEmail.touched}"
@@ -44,7 +44,7 @@
       </div>
       <div>
           <label>What’s this about?</label>
-          <input 
+          <input class="about" 
             type="text" 
             [(ngModel)]="contact.subject"
             placeholder="Enter subject" 
@@ -52,13 +52,15 @@
       </div>
       <div>
           <label>Go ahead, we are listening…</label>
-          <input 
+          <input class="message"
             type="text" 
             [(ngModel)]="contact.content"
             placeholder="Write us a note…" 
             name="content">
       </div>
+      <div class="button">
       <button [disabled]="!contactForm.form.valid">SUBMIT</button>
+    </div>
     </form>
   </div>
   
@@ -67,17 +69,17 @@
       <ul class="contact-social-container">
         <li class="contact-social-item">
           <a href="#" class="contact-social-link">
-            <img src="../../assets/facebook-logo-button.svg" alt="Facebook">
+            <img src="../../assets/ic_fb_mob1.svg" alt="Facebook">
           </a>
         </li>
         <li class="contact-social-item">
           <a href="#" class="contact-social-link">
-              <img src="../../assets/instagram-logo.svg" alt="Instagram">
+              <img src="../../assets/ic_ig_mob1.svg" alt="Instagram">
           </a>
         </li>
         <li class="contact-social-item">
           <a href="#" class="contact-social-link">
-              <img src="../../assets/twitter-logo-button.svg" alt="Twitter">
+              <img src="../../assets/ic_tw_mob1.svg" alt="Twitter">
           </a>
         </li>
       </ul>
