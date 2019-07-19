@@ -1,5 +1,5 @@
 <div>
-  <div>
+  <div class="user-profile">
     <div>
       <img src="../../assets/img_user1@2x.png" alt="">
     </div>
@@ -10,51 +10,30 @@
       Vancouver,BC
     </div>
   </div>
-  <div>
+
+  <div class="leader-board">
     <div>
       Top Zero Wasters
     </div>
-    <div>
+    <div>{{ leaders }}</div>
+    <div *ngFor="let leader of leaders; let i=index;">
       <div>
-        <img src="../../assets/img_user2.png" alt="">
+        <img *ngIf="i==0" src="../../assets/img_user2.png" alt="">
+        <img *ngIf="i==1" src="../../assets/img_user3.png" alt="">
+        <img *ngIf="i==2" src="../../assets/img_user4.png" alt="">
       </div>
       <div>
         <div>
-          Tina Belcher
+          {{ leader.name }}
         </div>
         <div>
-          <span>499</span> Packaging
-        </div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <img src="../../assets/img_user3.png" alt="">
-      </div>
-      <div>
-        <div>
-          Rochelle Rock
-        </div>
-        <div>
-          <span>367</span> Packaging
-        </div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <img src="../../assets/img_user4.png" alt="">
-      </div>
-      <div>
-        <div>
-          Kill Moves
-        </div>
-        <div>
-          <span>320</span> Packaging
+          {{ leader.package }} Packaging
         </div>
       </div>
     </div>
   </div>
-  <div>
+
+  <div class="user-board">
     <div>
         <div>
           Your Progress
@@ -68,10 +47,11 @@
           <span>Total Packaging</span>
         </div>
         <div>
-          diverted from the bla bla bla
+          diverted from the landfill since June 1, 2019
         </div>
         <div>
           <ul>
+            <li>Share your progress</li>
             <li class="">
               <a href="#" class="">
                 <img src="../../assets/facebook-logo-button.svg" alt="Facebook">
@@ -93,8 +73,9 @@
           <a href="#">upload the receipt</a>
         </div>
     </div>
+
     <div>
-      GRAPH GRAPH GRAPH GRAPH GRAPH GRAPH GRAPH
+      <app-user-progress-chart></app-user-progress-chart>
     </div>
   </div>
 </div>

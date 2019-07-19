@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-
-import { TotalPackaging } from './total-packaging.model';
+import { Leader } from '../../models/leader';
+import { TotalPackaging } from '../../models/TotalPackaging';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,19 +12,43 @@ import { TotalPackaging } from './total-packaging.model';
 })
 export class DashboardComponent implements OnInit {
 
-  totalPackaging;
+  leaders: Leader[] = [];
 
-  constructor(private http: HttpClient) {}
+  totalPackaging: TotalPackaging;
+
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   ngOnInit(): void {
     // Send Http request
-    this.fetchTotalPackaging(10);
+    this.fetchTotalPackaging();
+    this.fetchLeaders();
   }
 
-  private fetchTotalPackaging(idPerson) {
+  private fetchLeaders() {
     this.http
-      .get<{[key: string]: TotalPackaging }>('http://greenfill.deniscalixto.wmdd.ca/person/' + idPerson + '/totalpackaging')
+      .get<Leader[]>('http://greenfill.deniscalixto.wmdd.ca/leaderboard')
+      .pipe(
+        map(responseData => {
+          const leadersArray: Leader[] = [];
+          for (const key in responseData) {
+            leadersArray.push({...responseData[key]});
+          } 
+          return leadersArray;
+        })
+      )
+      .subscribe(resData => {
+        for(const key in resData[0]) {
+          this.leaders.push(resData[0][key]);
+        }
+      });
+  }
+
+  private fetchTotalPackaging() {
+    this.http
+      .get<TotalPackaging>('http://greenfill.deniscalixto.wmdd.ca/person/' + this.authService.userId + '/totalpackaging')
       .subscribe(totalItem => {
         this.totalPackaging = totalItem;
       });
-  }}
+  }
+
+}

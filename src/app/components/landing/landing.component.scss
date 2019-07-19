@@ -3,4 +3,32 @@
 .data-container{
   text-align: center;
   background-color: $landing-data-bgc;
+  width: 100vw;
+}
+
+.landing {
+  display: flex;
+  flex-flow: column;
+}
+
+h1 {
+  font-family: $main-font;
+  font-weight: lighter;
+  font-size: 40pt;
+  padding: 50px 10% 10px 10%;
+  color: $font-main-color;
+}
+
+p {
+  font-family: $body-font;
+  font-size: 16pt;
+  font-weight: lighter;
+  color: $font-color3;
+  padding: 0 10% 20px 10%;
+}
+
+h2 {
+  font-family: $main-font;
+  font-weight: lighter;
+  font-size: 24pt;
 }

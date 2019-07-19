@@ -20,6 +20,7 @@ import { MapLandingComponent } from './components/map-landing/map-landing.compon
 import { FeaturedStoreService } from './services/featured-store.service';
 import { AboutService } from './services/about.service';
 import { InfoService } from './services/info.service';
+import { SearchService } from './services/search.service';
 
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
@@ -29,6 +30,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoadingSpinnerComponent } from './components/shared/shared/loading-spinner/loading-spinner.component';
 import { CanadaProgressChartComponent } from './components/canada-progress-chart/canada-progress-chart.component';
+import { UserProgressChartComponent } from './components/user-progress-chart/user-progress-chart.component';
+import { SearchSingleComponent } from './components/search-single/search-single.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { CanadaProgressChartComponent } from './components/canada-progress-chart
     DashboardComponent,
     SearchComponent,
     LoadingSpinnerComponent,
-    CanadaProgressChartComponent
+    CanadaProgressChartComponent,
+    UserProgressChartComponent,
+    SearchSingleComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import { CanadaProgressChartComponent } from './components/canada-progress-chart
     NgbModule,
     ChartsModule
   ],
-  providers: [FeaturedStoreService, InfoService, AboutService],
+  providers: [FeaturedStoreService, InfoService, AboutService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

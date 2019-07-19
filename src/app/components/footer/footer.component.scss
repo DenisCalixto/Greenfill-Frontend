@@ -23,20 +23,25 @@ a{
   color: $font-main-color;
   font-family: $body-font;
 }
+
 .footer-container {
   display: flex;
   flex-flow: column;
 }
+
 .footer-brand {
   padding-left: 40px;
 }
+
 // Media Query
+
 @media screen and (min-width: 1050px) {
   .footer {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
   }
+
   .footer-container {
     display: flex;
     flex-flow: row;
