@@ -9,6 +9,7 @@ import { Store } from 'src/app/models/Store';
 export class SearchSingleComponent {
 
   constructor() { }
+  images = ["../../assets/img_store_a01@2x.png","../../assets/img_store_a02@2x.png", "../../assets/img_store_a03@2x.png"];
 
   search: Store;
 
