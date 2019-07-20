@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Leader } from '../../models/leader';
+import { Leader } from '../../models/Leader';
 import { TotalPackaging } from '../../models/TotalPackaging';
 import { AuthService } from '../auth/auth.service';
 

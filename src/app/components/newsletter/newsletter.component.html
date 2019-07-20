@@ -5,8 +5,9 @@
   <div class="news-text">
     <h1>Get the latest zero waste updates</h1>
     <p>Get our monthly newsletter and be in the loop.</p>
+  </div>
+  <div class="news-form">
     <form #newsForm="ngForm" (ngSubmit)="onSubmit(newsForm)">
-      <div>
         <input 
           type="email"
           [(ngModel)]="newsletter.email"
@@ -17,9 +18,8 @@
           required
           pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
         >
-        <button>Get Monthly Newsletter</button>   <div [hidden]="!newsletterEmail.errors?.pattern || !newsletterEmail.touched" class="invalid-feedback">
+        <button class="support1Btn">Get Monthly Newsletter</button>   <div [hidden]="!newsletterEmail.errors?.pattern || !newsletterEmail.touched" class="invalid-feedback">
             Email is not valid
-        </div>
       </div>
     </form>
   </div>
