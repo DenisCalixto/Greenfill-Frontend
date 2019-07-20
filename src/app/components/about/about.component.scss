@@ -1,0 +1,76 @@
+@import 'src/scss/variables';
+
+//Typography
+
+h1 {
+    font-family: $main-font;
+    color: $font-color1;
+    font-size: 40pt;
+    font-weight: lighter;
+    text-align: center;
+    //padding-left: 1.5rem;
+    //padding-right: 1.5rem;
+    margin-top: 50px;
+  }
+
+  h2, a {
+    font-family: $body-font;
+    color: $font-color1;
+    font-size: 20pt;
+    font-weight: lighter;
+  }
+
+  h3 {
+     font-family: $body-font;
+     color: $font-main-color;
+     font-size: 16pt; 
+     font-weight: lighter;
+     margin-bottom: 0;
+  }
+
+  p {
+      font-family: $body-font;
+      color: $font-color3;  
+      font-size: 20pt;
+      font-weight: lighter;
+      text-align: left;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+
+//About
+
+.about {
+    display: grid;
+    justify-content: center;
+}
+
+.about-container {
+    background-color: $suport-bgc3;
+}
+
+.about h1 {
+    margin-bottom: 38px;
+}
+
+.about-item {
+    display: grid;
+    justify-content: center;
+}
+
+.about-text p {
+    display: none;
+
+}
+
+.about-text a {
+    display: grid;
+    justify-content: right
+}
+
+.about-text {
+    background-color: $suport-bcg4;
+    margin-bottom: 30px;
+    padding: 10px; 
+}
