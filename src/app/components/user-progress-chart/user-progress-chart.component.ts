@@ -29,7 +29,8 @@ export class UserProgressChartComponent implements OnInit {
 
   public userProgressChartOptions: (ChartOptions) = {
     responsive: true,
-    aspectRatio: 5,
+    // aspectRatio: 5,
+    maintainAspectRatio: false,
     scales: {
       xAxes: [{
         display: true,
