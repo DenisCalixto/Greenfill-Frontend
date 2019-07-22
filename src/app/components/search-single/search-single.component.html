@@ -1,7 +1,22 @@
 <div *ngIf="search" class="search-single">
-  <div class="single-img">
-    <!-- <img [src]="search.imageBig" alt=""> -->
-  </div>
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>      
+      <div class="picsum-img-wrapper">
+        <img [src]="images[0]" alt="first slide">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>      
+      <div class="picsum-img-wrapper">
+        <img [src]="images[1]" alt="second slide">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>      
+      <div class="picsum-img-wrapper">
+        <img [src]="images[2]" alt="third slide">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
   <div class="single-text">
     <a href="#">go back to map</a>
     <div>
@@ -18,14 +33,14 @@
     </div>
     <div>
       <img src="../../assets/ic_phone_green.svg" alt="">
-      <p>{{ search.phone }}</p>
-    </div>
-    <!-- <div>
-      <img src="../../assets/ic_schedule.svg" alt="">
-      <p>{{ search.weekdayHours }}/{{ search.weekendHours }}</p>
+      <p>+1 (778) 806-3783</p>
     </div>
     <div>
-      <p>{{ search.text }}</p>
-    </div> -->
+      <img src="../../assets/ic_schedule.svg" alt="">
+      <p>Weekday 8a.m. - 8p.m. / Weekend 9a.m. - 8p.m.</p>
+    </div>
+    <div>
+      <p>Nada is Vancouver's first package-free grocery store. Certified B-Corp & 1% For the Planet Member. We're on a mission to cultivate a better world by inspiring people to change the way they shop for groceries!</p>
+    </div>
 </div>
 </div>
