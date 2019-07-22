@@ -2,5 +2,15 @@
     padding: 0 10% 40px 10%;
     position: relative; 
     height:50vh; 
-    width:100vw
+    width:70vw;
+}
+
+// Media Query
+
+@media screen and (min-width: 800px) {
+    .chart-container {
+        padding-top: 30px;
+        width:50vw; 
+        height:40vh; 
+    }
 }

@@ -1,0 +1,171 @@
+@import 'src/scss/variables';
+
+.dashboard-container {
+    display: grid;
+    margin-bottom: 50px;
+}
+
+// Profile
+.user-profile {
+    background-color: $support-bgc1;
+    box-shadow: 0 3px 6px #00000016;
+    margin: 50px 10% 20px 10%;
+    display: grid;
+    justify-items: center;
+    padding-bottom: 50px;
+}
+
+.user-img img {
+    width: 140px;
+    height: 140px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: $body-font;
+    color: $font-color3;
+    font-size: 16pt;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-family: $body-font;
+    color: $font-main-color;
+    font-size: 12pt;
+    font-weight: lighter;
+}
+
+// Leaderboard
+.leader-board {
+    background-color: $support-bgc1;
+    box-shadow: 0 3px 6px #00000016;
+    margin: 0px 10% 20px 10%;
+    display: grid;
+    justify-items: start;
+    padding: 50px 10% 50px 10%;
+}
+
+h2 {
+    font-family: $main-font;
+    font-size: 16pt;
+    color: $font-color1;
+}
+
+.leader-user:first-of-type .leader-img {
+    width: 50px;
+}
+
+.leader-img img {
+    width: 50px;
+    height: 50px;
+}
+
+.leader-user {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.leader-text {
+    margin-left: 10px;
+}
+
+// Progress
+.user-board {
+    background-color: $support-bgc1;
+    box-shadow: 0 3px 6px #00000016;
+    margin: 0px 10% 20px 10%;
+    display: grid;
+    justify-items: start;
+    padding: 50px 20px 50px 20px;
+    grid-row-start: 2;
+}
+
+.progress-info {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.div-progress-title {
+    align-self: end;
+}
+
+h2{
+    padding-bottom: 40px;
+}
+
+.progress-title {
+    font-family: $body-font;
+    font-size: 20pt;
+    color: $font-color2;
+}
+
+.progress-plant {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+}
+
+// Progress Share
+.progress-share {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+ul{
+    margin: 0;
+    display: flex;
+    padding-left: 0;
+}
+
+li {
+    padding-left: 10px;
+    list-style: none;
+}
+
+a {
+    font-family: $body-font;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: $font-main-color;
+    text-decoration: underline;
+    padding-bottom: 50px;
+}
+
+// Media Query
+
+@media screen and (min-width: 800px) {
+    .dashboard-container {
+        grid-template-columns: 350px 1fr;
+        grid-template: 1fr 1fr;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .user-profile {
+        margin-top: 20px;
+    }
+
+    .leader-board {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .user-board {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+
+    .progress-info {
+        grid-gap: 20px;
+    }
+}
