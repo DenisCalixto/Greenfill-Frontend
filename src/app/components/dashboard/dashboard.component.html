@@ -1,33 +1,34 @@
-<div>
+<div class="dashboard-container">
   <div class="user-profile">
-    <div>
+    <div class="user-img">
       <img src="../../assets/img_user1@2x.png" alt="">
     </div>
-    <div>
+    <p>
       Giang Nga
-    </div>
-    <div>
+    </p>
+    <h4>
       Vancouver,BC
-    </div>
+    </h4>
   </div>
 
   <div class="leader-board">
-    <div>
+    <h2>
       Top Zero Wasters
-    </div>
+    </h2>
     <div>{{ leaders }}</div>
-    <div *ngFor="let leader of leaders; let i=index;">
-      <div>
-        <img *ngIf="i==0" src="../../assets/img_user2.png" alt="">
-        <img *ngIf="i==1" src="../../assets/img_user3.png" alt="">
-        <img *ngIf="i==2" src="../../assets/img_user4.png" alt="">
+    <div class="leader-user" *ngFor="let leader of leaders; let i=index;">
+      <div class="leader-img">
+        <img *ngIf="i==0" src="../../assets/img_user3@2x.png" alt="">
+        <img *ngIf="i==1" src="../../assets/img_user4@2x.png" alt="">
+        <img *ngIf="i==2" src="../../assets/img_user5@2x.png" alt="">
       </div>
-      <div>
-        <div>
+      <div class="leader-text">
+        <p class="leader-name">
           {{ leader.name }}
-        </div>
+        </p>
         <div>
-          {{ leader.package }} Packaging
+          {{ leader.package }} 
+          <h4>Packaging</h4>
         </div>
       </div>
     </div>
@@ -35,42 +36,44 @@
 
   <div class="user-board">
     <div>
-        <div>
+        <h2 class="progress-card-title">
           Your Progress
+        </h2>
+        <div class="progress-info">
+          <div class="progress-plant">
+            <img src="../../assets/ic_total.svg" alt="">
+          </div>
+          <div class="div-progress-title">
+            <span *ngIf="totalPackaging">{{ totalPackaging.total }}</span>
+            <span *ngIf="!totalPackaging">0</span>
+            <span class="progress-title">Total Packaging</span>
+          </div>
+          <p>
+            diverted from the landfill since June 1, 2019
+          </p>
         </div>
-        <div>
-          <img src="../../assets/ic_total.svg" alt="">
-        </div>
-        <div>
-          <span *ngIf="totalPackaging">{{ totalPackaging.total }}</span>
-          <span *ngIf="!totalPackaging">0</span>
-          <span>Total Packaging</span>
-        </div>
-        <div>
-          diverted from the landfill since June 1, 2019
-        </div>
-        <div>
-          <ul>
-            <li>Share your progress</li>
+        <div class="progress-share">         
+            <h4>Share your progress</h4>
+            <ul>
             <li class="">
               <a href="#" class="">
-                <img src="../../assets/facebook-logo-button.svg" alt="Facebook">
+                <img src="../../assets/share_facebook-logo-button.svg" alt="Facebook">
               </a>
             </li>
             <li class="">
               <a href="#" class="">
-                  <img src="../../assets/instagram-logo.svg" alt="Instagram">
+                  <img src="../../assets/share_instagram-logo_button.svg" alt="Instagram">
               </a>
             </li>
             <li class="">
               <a href="#" class="">
-                  <img src="../../assets/twitter-logo-button.svg" alt="Twitter">
+                  <img src="../../assets/share_twitter-logo-button.svg" alt="Twitter">
               </a>
             </li>
           </ul>
         </div>
-        <div>
-          <a href="#">upload the receipt</a>
+        <div class="upload-receipt">
+          <a href="#">Upload your receipt</a>
         </div>
     </div>
 
