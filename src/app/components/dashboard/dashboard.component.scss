@@ -85,15 +85,15 @@ h2 {
     display: grid;
     grid-template-columns: 90px 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 
 .div-progress-title {
     align-self: end;
 }
 
-h2{
-    padding-bottom: 40px;
+.progress-card-title {
+    margin-bottom: 40px;
 }
 
 .progress-title {
@@ -161,9 +161,5 @@ a {
         grid-row-start: 1;
         grid-row-end: 3;
         margin: 20px 0 20px 0;
-    }
-
-    .progress-info {
-        grid-gap: 20px;
     }
 }
