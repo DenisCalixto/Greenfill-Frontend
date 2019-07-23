@@ -15,21 +15,30 @@ export class UserProgressChartComponent implements OnInit {
   public userProgressChartType = 'line';
   public userProgressChartLegend = false;
   public userProgressChartData = [
-    {data: [2, 30, 70, 120, 150, 210, 180, 300], label: 'Series A',
-     pointRadius: 7, pointBorderColor: 'lightgreen', pointBorderWidth: 4,
-     pointBackgroundColor: 'green'}
+    {data: [2, 30, 70, 120, 150, 210, 180, 300], label: 'tonnes',
+    pointRadius: 7, pointBorderColor: '#43C1B366', pointBorderWidth: 12,
+    pointBackgroundColor: '#43C1B3'}
   ];
 
   public userProgressChartColors: Color[] = [
     {
-      borderColor: 'green',
+      borderColor: '#43C1B3',
       backgroundColor: 'transparent',
     },
   ];
 
   public userProgressChartOptions: (ChartOptions) = {
     responsive: true,
-    aspectRatio: 5,
+    // aspectRatio: 5,
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+          left: 0,
+          right: 30,
+          top: 30,
+          bottom: 0
+        }
+    },
     scales: {
       xAxes: [{
         display: true,
@@ -47,7 +56,7 @@ export class UserProgressChartComponent implements OnInit {
         },
         gridLines: {
           drawBorder: false,
-          color: ['green', 'transparent', 'transparent', 'green', 'transparent', 'transparent', 'green']
+          color: ['#D7F7F3', 'transparent', 'transparent', '#D7F7F3', 'transparent', 'transparent', '#D7F7F3']
         },
       }]
     }
