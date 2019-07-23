@@ -26,13 +26,13 @@ export class DashboardComponent implements OnInit {
 
   private fetchLeaders() {
     this.http
-      .get<Leader[]>('http://greenfill.deniscalixto.wmdd.ca/leaderboard')
+      .get<Leader[]>('https://api.greenfill.wmdd.ca/leaderboard')
       .pipe(
         map(responseData => {
           const leadersArray: Leader[] = [];
           for (const key in responseData) {
             leadersArray.push({...responseData[key]});
-          } 
+          }
           return leadersArray;
         })
       )
@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
 
   private fetchTotalPackaging() {
     this.http
-      .get<TotalPackaging>('http://greenfill.deniscalixto.wmdd.ca/person/' + this.authService.userId + '/totalpackaging')
+      .get<TotalPackaging>('https://api.greenfill.wmdd.ca/person/' + this.authService.userId + '/totalpackaging')
       .subscribe(totalItem => {
         this.totalPackaging = totalItem;
       });

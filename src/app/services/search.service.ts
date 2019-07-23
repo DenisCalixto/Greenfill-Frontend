@@ -18,7 +18,7 @@ export class SearchService {
   search(searchText: string) {
     return this.http
       .post<Search[]>(
-        'http://greenfill.deniscalixto.wmdd.ca/search',
+        'https://api.greenfill.wmdd.ca/search',
         {
           search: searchText
         }
@@ -39,7 +39,7 @@ export class SearchService {
   fetchStore(storeId: string) {
     return this.http
       .get<Store>(
-        'http://greenfill.deniscalixto.wmdd.ca/company/' + storeId
+        'https://api.greenfill.wmdd.ca/company/' + storeId
       )
       .pipe(
         catchError(this.handleError),
