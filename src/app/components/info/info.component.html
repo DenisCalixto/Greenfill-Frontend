@@ -10,7 +10,7 @@
   <div class="items-container">
     <ngb-accordion [closeOthers]="true" activeIds="static-0">
       <ngb-panel *ngFor="let info of infos; let i=index;" id="static-{{ info.id }}">
-        <ng-template ngbPanelTitle>
+        <ng-template ngbPanelTitle id="panel">
           <img [src]="info.image" alt="">
         </ng-template>
         <ng-template ngbPanelContent>

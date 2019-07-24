@@ -49,6 +49,14 @@ img {
     grid-template-columns: 1fr 1fr;
 }
 
-.card {
-    border: none
+.card{
+    border: none;
+}
+
+.card-header  {
+}
+
+@media screen and (min-width: 767px) {
+
+
 }
