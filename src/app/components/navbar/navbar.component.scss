@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px #00000016;
 }
 ul{
   margin: 0;
@@ -18,4 +20,40 @@ a{
   display:inline;
   text-decoration: none;
   color: $font-main-color;
+  font-family: $main-font;
+  font-size: 14pt;
+}
+
+button.primaryBtn {
+  background-color: $font-color1;
+  color: white;
+  font-family: $body-font;
+  font-size: 12pt;
+  font-weight: lighter;
+  border: 0px;
+  padding: 10px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px #6DA34050;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  #navbarSupportedContent {
+    background-color:#000000d5;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding-top: 100px;
+    padding-left: 40px;
+  }
+
+  a.nav-link {
+    color: #fff;
+  }
+
+  .navbar-nav {
+    margin-bottom: 30px;
+  }
 }

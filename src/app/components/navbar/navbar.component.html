@@ -28,6 +28,6 @@
       </li>
     </ul>
     <a *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onLogout()">Logout</a>
-    <button *ngIf="!isAuthenticated" routerLink="/login">LOGIN</button>
+    <button class="primaryBtn" *ngIf="!isAuthenticated" routerLink="/login">LOGIN</button>
   </div>
 </nav>

@@ -20,7 +20,7 @@ export class CanadaProgressChartComponent implements OnInit {
   public canadaProgressChartType = 'line';
   public canadaProgressChartLegend = false;
   public canadaProgressChartData = [
-    {data: [480000, , , 428000, 423600, 394600, 370000, 351000, 371000, ], label: 'tonnes',
+    {data: [480000, 460000, 440000, 428000, 423600, 394600, 370000, 351000, 371000, ], label: 'tonnes',
      pointRadius: 7, pointBorderColor: '#43C1B366', pointBorderWidth: 12,
      pointBackgroundColor: '#43C1B3'}
   ];
