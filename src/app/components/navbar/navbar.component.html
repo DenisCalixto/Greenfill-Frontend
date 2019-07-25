@@ -27,6 +27,8 @@
         <a routerLink="/dashboard" class="nav-link" (click)="isNavbarCollapsed = true">Dashboard</a>
       </li>
     </ul>
+    <span *ngIf="isAuthenticated">Giang Nga</span>
+    <img *ngIf="isAuthenticated" src="../../assets/img_user3@2x.png" alt="">
     <a *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onLogout()">Logout</a>
     <button class="primaryBtn" *ngIf="!isAuthenticated" routerLink="/login">LOGIN</button>
   </div>
