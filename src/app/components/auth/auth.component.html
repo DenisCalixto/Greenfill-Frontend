@@ -25,7 +25,7 @@
         />
   </div>
   <div class="button">
-        
+
         <button
           class="btn btn-primary"
           id="login"
@@ -34,9 +34,9 @@
         >
           {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button>
-        <button class="btn btn-primary" id="switch" (click)="onSwitchMode()" type="button">
+        <!-- <button class="btn btn-primary" id="switch" (click)="onSwitchMode()" type="button">
           Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
-        </button>
+        </button> -->
   </div>
 </form>
     <div class="alert alert-danger" *ngIf="error">
