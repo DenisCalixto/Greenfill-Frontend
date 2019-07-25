@@ -15,7 +15,6 @@
     <h2>
       Top Zero Wasters
     </h2>
-    <div>{{ leaders }}</div>
     <div class="leader-user" *ngFor="let leader of leaders; let i=index;">
       <div class="leader-img">
         <img *ngIf="i==0" src="../../assets/img_user3@2x.png" alt="">
@@ -27,7 +26,7 @@
           {{ leader.name }}
         </p>
         <div>
-          {{ leader.package }} 
+          {{ leader.package }}
           <h4>Packaging</h4>
         </div>
       </div>
@@ -45,15 +44,15 @@
             <video autoplay="autoplay" src="../../assets/ic_total_7.mp4" type="video/mp4"></video>
           </div>
           <div class="div-progress-title">
-            <span *ngIf="totalPackaging">{{ totalPackaging.total }}</span>
-            <span *ngIf="!totalPackaging">0</span>
+            <span *ngIf="totalPackaging.total">{{ totalPackaging.total }}</span>
+            <span *ngIf="!totalPackaging.total">0</span>
             <span class="progress-title">Total Packaging</span>
           </div>
           <p>
             diverted from the landfill since June 1, 2019
           </p>
         </div>
-        <div class="progress-share">         
+        <div class="progress-share">
             <h4>Share your progress</h4>
             <ul>
             <li class="">
