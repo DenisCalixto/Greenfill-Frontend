@@ -49,3 +49,29 @@ input {
   padding-top: 4px;
   padding-bottom: 4px;
 }
+
+//Store Info
+
+.store-info {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.store-info:nth-child(even) {
+  background-color: $support-bgc1;
+}
+
+.search-text {
+  background-color: $support-bgc1;
+}
+
+//Media
+
+@media screen and (min-width: 880px) {
+
+ .search {
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+ } 
+
+}
