@@ -33,6 +33,7 @@ h4 {
     color: $font-main-color;
     font-size: 12pt;
     font-weight: lighter;
+    margin-top: 4px;
 }
 
 // Leaderboard
@@ -64,6 +65,23 @@ h2 {
     padding-top: 30px;
     display: grid;
     grid-template-columns: 1fr 2fr;
+}
+
+p.leader-name {
+    font-family: $body-font;
+    color: $font-color3;
+    font-size: 16pt;
+}
+
+.leader-total-div {
+    display: flex;
+}
+
+.leader-total {
+    font-family: $main-font;
+    color: $font-color2;
+    font-size: 16pt; 
+    margin-right: 8px;
 }
 
 .leader-text {
@@ -106,6 +124,13 @@ h2 {
     grid-row-start: 1;
     grid-row-end: 3;
     align-self: center;
+}
+
+.progress-total {
+    font-family: $body-font;
+    color: $font-color1;
+    font-size: 50pt;
+    margin-right: 10px;
 }
 
 // Progress Share
