@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { SearchService, Search } from './../../services/search.service';
 import { SearchSingleComponent } from '../search-single/search-single.component';
@@ -14,7 +14,7 @@ import { Store } from 'src/app/models/Store';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private searchService: SearchService, private router: Router) {}
+  constructor(private searchService: SearchService, private router: ActivatedRoute) {}
 
   // Creating a reference which will be used to access data and method from the child component
   @ViewChild(SearchSingleComponent, { static: true } as any) child: SearchSingleComponent;
@@ -25,6 +25,11 @@ export class SearchComponent implements OnInit {
     if (history.state.data) {
       // console.log(history.state.data['searchedText']);
       this.search(history.state.data['searchedText']);
+    } else {
+      if (this.router.snapshot.paramMap.get('id')) {
+        console.log(this.router.snapshot.paramMap.get('id'));
+        this.loadStore(this.router.snapshot.paramMap.get('id'));
+      }
     }
   }
 

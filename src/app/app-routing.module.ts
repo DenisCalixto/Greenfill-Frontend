@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'login', component: AuthComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'search', component: SearchComponent},
+  {path: 'search/:id', component: SearchComponent},
   {path: 'canada-progress-chart', component: CanadaProgressChartComponent}
 ];
 

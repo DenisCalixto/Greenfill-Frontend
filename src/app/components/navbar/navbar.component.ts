@@ -11,6 +11,7 @@ import { AuthService } from '../auth/auth.service';
 export class NavbarComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
   private userSub: Subscription;
+  isNavbarCollapsed = false;
 
   constructor(private authService: AuthService) { }
 

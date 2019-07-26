@@ -1,0 +1,62 @@
+@import 'src/scss/variables';
+
+//Typography
+
+h1 {
+  font-family: $main-font;
+  color: $font-color1;
+  font-size: 40pt;
+  font-weight: lighter;
+  text-align: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 50px;
+}
+
+h2 {
+  font-family: $body-font;
+  color: $font-color3;
+  font-size: 20pt;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 38px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  
+}
+
+//Img
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+//Steps
+
+.steps-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.steps-container img {
+    margin-bottom: 40px;
+}
+
+.accordion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card{
+    border: none;
+}
+
+.card-header  {
+}
+
+@media screen and (min-width: 767px) {
+
+
+}

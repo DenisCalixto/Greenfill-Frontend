@@ -1,16 +1,19 @@
-<div>
-  <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
-    <input type="text" id="searchText" name="searchText"
-      ngModel required
-      placeholder="Search for zero waste store or items…">>
-    <button class="search-btn" type="submit" text="GO"
-      [disabled]="!searchForm.valid">
-      <img src="../../assets/ic_search_btn.svg" alt="">
-    </button>
-  </form>
-  </div>
+
   <div class="search">
     <div class="left-panel">
+      
+        <div class="search-bar">
+            <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+                <button class="search-btn" type="submit" text="GO"
+                [disabled]="!searchForm.valid">
+                <img src="../../assets/ic_search_btn.svg" alt="">
+              </button>
+              <input type="text" id="searchText" name="searchText"
+                ngModel required
+                placeholder="Search for zero waste store or items…">
+            </form>
+            </div>
+
       <div *ngFor="let search of searchs" class="store-info">
           <div class="store-text">
             <a (click)="loadStore(search.id)">{{ search.name }}</a>

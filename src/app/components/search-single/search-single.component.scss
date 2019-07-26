@@ -1,4 +1,62 @@
+@import 'src/scss/variables';
+
 .picsum-img-wrapper img {
   width: 100%;
   height: auto;
+}
+
+.single-text {
+  padding: 20px 30px;
+  background-color: $support-bgc1;
+}
+
+.single-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+}
+
+.store-name, .store-info {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  font-family: $main-font;
+  font-size: 16pt;
+  color: $font-color1;
+  padding-top: 16px;
+}
+
+.map-link {
+  align-self: center;
+  justify-self: end;
+  font-family: $body-font;
+  color: #43C1B3;
+  font-size: 14pt;
+}
+
+.store-img {
+  margin-left: 10px;
+}
+
+.store-info {
+  height: 34px;
+}
+
+.store-info p {
+  margin-top: 16px;
+  margin-left: 10px;
+  font-family: $body-font;
+  font-size: 14pt;
+  color: $font-color3;
+  font-weight: lighter;
+}
+
+p {
+  margin-top: 30px;
+  font-family: $body-font;
+  font-size: 14pt;
+  color: $font-color3;
+  font-weight: lighter;
 }

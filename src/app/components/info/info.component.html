@@ -1,7 +1,7 @@
 <div class="info">
   <div class="steps-container">
     <h1>WHAT IS ZERO WASTE?</h1>
-    <p>Zero Waste could be done easily within these 5R steps: Refuse, Reduce, Reuse, Recycle and Rot.</p>
+    <h2>Zero Waste could be done easily within these 5R steps: Refuse, Reduce, Reuse, Recycle and Rot.</h2>
     <div class="steps-image">
       <img src="../../assets/img_zero_waste_banner_s.svg" alt="">
     </div>
@@ -10,7 +10,7 @@
   <div class="items-container">
     <ngb-accordion [closeOthers]="true" activeIds="static-0">
       <ngb-panel *ngFor="let info of infos; let i=index;" id="static-{{ info.id }}">
-        <ng-template ngbPanelTitle>
+        <ng-template ngbPanelTitle id="panel">
           <img [src]="info.image" alt="">
         </ng-template>
         <ng-template ngbPanelContent>
