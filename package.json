@@ -3,16 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.7",
     "@angular-devkit/build-angular": "~0.801.0",
     "@angular/animations": "~8.1.0",
     "@angular/cli": "~8.1.0",
@@ -30,7 +28,6 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
-    "express": "^4.17.1",
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.0.0",
     "ng2-charts": "^2.3.0",
@@ -59,9 +56,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.4.5"
-  },
-  "engines": {
-    "node": "12.3.1",
-    "npm": "6.6.0"
   }
 }

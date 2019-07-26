@@ -10,18 +10,19 @@ import { Store } from '../../models/Featured-store';
 })
 
 export class FeaturedComponent implements OnInit {
-  
-  store: Store = {
-    name: '',
-    address: '',
-    weekdayHours: '',
-    weekendHours: '',
-    image: ''
-  }
+
+  // store: Store = {
+  //   id: 0,
+  //   name: '',
+  //   address: '',
+  //   weekdayHours: '',
+  //   weekendHours: '',
+  //   image: ''
+  // }
   stores: Store[];
-  
+
   constructor (private featuredStoreService: FeaturedStoreService) { }
-  
+
   ngOnInit() {
     this.stores = this.featuredStoreService.getStores();
   }
