@@ -8,14 +8,6 @@ import { Store } from '../models/Store';
 export interface Search {
   id: string;
   name: string;
-  address: string;
-
-}
-export interface marker {
-  name: string;
-
-  lat: number;
-	lng: number;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -35,7 +27,6 @@ export class SearchService {
         catchError(this.handleError),
         map(responseData => {
           const leadersArray: Search[] = [];
-          const markers: marker[] = [];
           // tslint:disable-next-line: forin
           for (const key in responseData) {
             leadersArray.push({...responseData[key]});
