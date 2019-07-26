@@ -27,9 +27,11 @@
         <a routerLink="/dashboard" class="nav-link" (click)="isNavbarCollapsed = true">Dashboard</a>
       </li>
     </ul>
-    <span *ngIf="isAuthenticated">Giang Nga</span>
-    <img *ngIf="isAuthenticated" src="../../assets/img_user3@2x.png" alt="">
-    <a *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onLogout()">Logout</a>
+    <img class="user-img" *ngIf="isAuthenticated" src="../../assets/img_user2@2x.png" alt="">
+    <span class="user-name" *ngIf="isAuthenticated">Giang Nga</span>
+    <div class="user-arrow" *ngIf="isAuthenticated"></div>
+    <!-- <img class="user-arrow" src="../../assets/ic_arrow_down@2x" alt=""> -->
+    <!-- <a *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onLogout()">Logout</a> -->
     <button class="primaryBtn" *ngIf="!isAuthenticated" routerLink="/login">LOGIN</button>
   </div>
 </nav>
