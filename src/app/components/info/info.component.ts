@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { InfoService } from '../../services/info.service';
 import { Info } from '../../models/Info';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  styleUrls: ['./info.component.scss']
+  styleUrls: ['./info.component.scss'], 
+  encapsulation: ViewEncapsulation.None
 })
 export class InfoComponent implements OnInit {
   info: Info = {

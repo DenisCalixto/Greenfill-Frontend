@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.7",
     "@angular-devkit/build-angular": "~0.801.0",
     "@angular/animations": "~8.1.0",
     "@angular/cli": "~8.1.0",
