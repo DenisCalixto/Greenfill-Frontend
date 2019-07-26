@@ -2,16 +2,18 @@
   <h1>Featured Package-Free Stores</h1>
   <div class="featured-container">
     <div *ngFor="let store of stores" class="featured-item">
-      <div class="featured-img">
-        <img [src]="store.image" alt="">
-      </div>
-      <div class="featured-text">
-        <h2>{{ store.name }}</h2>
-        <p>{{ store.address }}</p>
-        <p>{{ store.weekdayHours }}</p>
-        <p>{{ store.weekendHours }}</p>
-      </div>
-    </div> 
+      <a routerLink="/search/{{ store.id }}">
+        <div class="featured-img">
+          <img [src]="store.image" alt="">
+        </div>
+        <div class="featured-text">
+          <h2>{{ store.name }}</h2>
+          <p>{{ store.address }}</p>
+          <p>{{ store.weekdayHours }}</p>
+          <p>{{ store.weekendHours }}</p>
+        </div>
+      </a>
+    </div>
   </div>
   <button class="secondaryBtn" routerLink="/search">EXPLORE MORE</button>
 </div>
