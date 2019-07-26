@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Store } from '../models/Featured-store'
+import { Store } from '../models/Featured-store';
 
 @Injectable()
 export class FeaturedStoreService {
@@ -9,6 +9,7 @@ export class FeaturedStoreService {
   constructor() {
     this.stores = [
       {
+        id: 5,
         name: 'NADA',
         address: '675 E Broadway Vancouver BC V5T 1X7',
         weekdayHours: 'Weekday 8a.m. - 8p.m.',
@@ -16,6 +17,7 @@ export class FeaturedStoreService {
         image: '../../assets/store_nada.png'
       },
       {
+        id: 5,
         name: 'The Soap Dispensary',
         address: '675 E Broadway Vancouver BC V5T 1X7',
         weekdayHours: 'Weekday 8a.m. - 8p.m.',
@@ -23,6 +25,7 @@ export class FeaturedStoreService {
         image: '../../assets/store_soap.png'
       },
       {
+        id: 5,
         name: 'Balanced Botanicals',
         address: '675 E Broadway Vancouver BC V5T 1X7',
         weekdayHours: 'Weekday 8a.m. - 8p.m.',
