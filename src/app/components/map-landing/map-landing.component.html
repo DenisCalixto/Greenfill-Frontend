@@ -1,7 +1,48 @@
 <div class="map-landing">
-  <p>
-      map-landing works!
-  </p>
+  <agm-map
+  #gm
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="false"
+  [styles] = "styles"
+  >
+
+  <agm-marker
+
+  [latitude]="lat"
+  [longitude]="lng"
+
+
+  >
+
+
+  <agm-info-window>
+    <strong>{{"You are here"}}</strong>
+  </agm-info-window>
+</agm-marker>
+  <agm-marker
+
+      *ngFor="let m of markers; let i = index"
+
+      (mouseOver)="onMouseOver(infoWindow,gm)"
+
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [iconUrl]="icon"
+      (mouseOut)="onMouseOut(infoWindow,gm)"
+>
+
+
+    <agm-info-window #infoWindow>
+      <strong>{{m.name}}</strong>
+      <br>
+      <strong>{{m.website}}</strong>
+    </agm-info-window>
+
+  </agm-marker>
+</agm-map>
   <form #landingSearchForm="ngForm">
     <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required>
     <button (click)="onTextSearched()">Send Search</button>
