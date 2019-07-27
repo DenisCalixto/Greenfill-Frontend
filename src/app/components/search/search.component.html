@@ -13,15 +13,15 @@
                 placeholder="Search for zero waste store or items…">
             </form>
             </div>
-
+        <div class="cards">      
       <div *ngFor="let search of searchs" class="store-info">
           <div class="store-text">
             <a (click)="loadStore(search.id)">{{ search.name }}</a>
-            <div>
+            <div class="addr">
               <img src="../../assets/ic_pin_green.svg" alt="">
               <p>{{ search.address }}</p>
             </div>
-            <div>
+            <div class="schedule">
               <img src="../../assets/ic_schedule.svg" alt="">
               <p>{{ search.weekdayHours }}</p><br>
               <p>{{ search.weekendHours }}</p>
@@ -32,6 +32,7 @@
           </div>
       </div>
     </div>
+  </div>
     <div class="right-panel">
       <app-search-single></app-search-single>
     </div>
