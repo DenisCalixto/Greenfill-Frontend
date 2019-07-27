@@ -11,11 +11,11 @@ export class UserProgressChartComponent implements OnInit {
 
   constructor() { }
 
-  public userProgressChartLabels = ['Jun 2008','Jul 2008','Aug 2008','Sep 2008','Oct 2008','Nov 2008','Dec 2008','Jan 2009'];
+  public userProgressChartLabels = ['Jan 2019','Feb 2019','Mar 2019','Apr 2019','May 2019','Jun 2019','Jul 2019'];
   public userProgressChartType = 'line';
   public userProgressChartLegend = false;
   public userProgressChartData = [
-    {data: [2, 30, 70, 120, 150, 210, 180, 300], label: 'tonnes',
+    {data: [2, 30, 70, 120, 150, 210, 180], label: 'Packaging',
     pointRadius: 7, pointBorderColor: '#43C1B366', pointBorderWidth: 12,
     pointBackgroundColor: '#43C1B3'}
   ];

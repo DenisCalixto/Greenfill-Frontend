@@ -20,6 +20,19 @@ agm-map {
 
 //Tipography
 
+.store-text a {
+  font-size: 20px;  
+  color:$font-color1;
+  font-family: $main-font;
+  text-transform: uppercase;
+}
+
+.store-text p {
+  font-size: 16px;
+  color: $font-color3;
+  font-family: $body-font;
+}
+
 //Search Bar
 
 .search-bar {
@@ -58,9 +71,9 @@ input {
 //Store Info
 
 .store-info {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 18px;
 }
+
 
 .store-info:nth-child(even) {
   background-color: $support-bgc1;
@@ -68,6 +81,38 @@ input {
 
 .search-text {
   background-color: $support-bgc1;
+}
+
+.cards {
+  max-height: 100vh;
+  overflow: scroll;
+}
+
+.store-text {
+  margin-left: 20px;
+}
+
+.addr {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.addr p {
+  margin-bottom: 0;
+}
+
+.addr img {
+  margin-right: 12px;
+}
+
+.schedule {
+  display: flex;
+  padding-bottom: 18px;
+}
+
+.store-img {
+  display: none;
 }
 
 //Media

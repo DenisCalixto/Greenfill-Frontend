@@ -33,6 +33,7 @@ h4 {
     color: $font-main-color;
     font-size: 12pt;
     font-weight: lighter;
+    margin-top: 4px;
 }
 
 // Leaderboard
@@ -66,6 +67,23 @@ h2 {
     grid-template-columns: 1fr 2fr;
 }
 
+p.leader-name {
+    font-family: $body-font;
+    color: $font-color3;
+    font-size: 16pt;
+}
+
+.leader-total-div {
+    display: flex;
+}
+
+.leader-total {
+    font-family: $main-font;
+    color: $font-color2;
+    font-size: 16pt; 
+    margin-right: 8px;
+}
+
 .leader-text {
     margin-left: 10px;
 }
@@ -79,17 +97,23 @@ h2 {
     justify-items: start;
     padding: 50px 20px 50px 20px;
     grid-row-start: 2;
+    justify-content: center;
 }
 
 .progress-info {
     display: grid;
     grid-template-columns: 90px 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
+    // grid-gap: 10px;
 }
 
 .div-progress-title {
     align-self: end;
+    margin-left: 20px;
+}
+
+.progress-diverted-title {
+    margin-left: 20px;
 }
 
 .progress-card-title {
@@ -108,18 +132,28 @@ h2 {
     align-self: center;
 }
 
+.progress-total {
+    font-family: $body-font;
+    color: $font-color1;
+    font-size: 50pt;
+    margin-right: 10px;
+}
+
 // Progress Share
 .progress-share {
-    padding-top: 30px;
+    padding-top: 0px;
     padding-bottom: 30px;
-    display: grid;
-    grid-template-columns: 150px 1fr;
+    // display: grid;
+    // grid-template-columns: 150px 1fr;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 ul{
     margin: 0;
     display: flex;
     padding-left: 0;
+    flex-grow: 10;
 }
 
 li {
@@ -133,14 +167,14 @@ a {
     font-size: 12pt;
     color: $font-main-color;
     text-decoration: underline;
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
 }
 
 // Media Query
 
 @media screen and (min-width: 800px) {
     .dashboard-container {
-        grid-template-columns: 350px 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-template: 1fr 1fr;
         padding-left: 10%;
         padding-right: 10%;
@@ -162,4 +196,6 @@ a {
         grid-row-end: 3;
         margin: 20px 0 20px 0;
     }
+
+
 }
