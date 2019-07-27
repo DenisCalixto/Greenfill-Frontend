@@ -13,12 +13,13 @@ export class MapLandingComponent implements OnInit {
   ROOT_URL = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBU-oePatWVKCry-dkFgUNEVNoQGYwqthk&address=';
 
   posts: any;
-  zoom: number = 16;
+  zoom: number = 12;
 
   // current position
 
   lat: any;
   lng: any;
+  // animation: 'DROP';
   styles =
   [
     {
@@ -270,8 +271,9 @@ export class MapLandingComponent implements OnInit {
             for(let i=0;i<this.addresses.length;i++){
               this.markers[i].name = this.addresses[i].name;
               this.markers[i].website = this.addresses[i].website;
+              this.markers[i].animation = 'DROP'
             }
-          },3000);
+          },1000);
         }
 // ========================================
 
@@ -296,6 +298,7 @@ ngOnInit(){
 
 }
 interface marker {
+  animation: string;
   website: string;
   name: string;
 	lat: number;

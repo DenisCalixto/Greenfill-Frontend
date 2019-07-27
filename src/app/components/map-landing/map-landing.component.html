@@ -5,6 +5,7 @@
   [longitude]="lng"
   [zoom]="zoom"
   [disableDefaultUI]="false"
+
   [zoomControl]="false"
   [styles] = "styles"
   >
@@ -13,7 +14,6 @@
 
   [latitude]="lat"
   [longitude]="lng"
-
 
   >
 
@@ -27,7 +27,7 @@
       *ngFor="let m of markers; let i = index"
 
       (mouseOver)="onMouseOver(infoWindow,gm)"
-
+      [animation]= "m.animation"
       [latitude]="m.lat"
       [longitude]="m.lng"
       [iconUrl]="icon"

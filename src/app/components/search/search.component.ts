@@ -110,7 +110,7 @@ export class SearchComponent implements OnInit {
             this.markers[i].name = this.searchs[i].name;
 
           }
-        },3000);
+        },1000);
       },
       errorMessage => {
         console.log(errorMessage);
