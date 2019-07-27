@@ -42,7 +42,6 @@ export class SearchComponent implements OnInit {
       navigator.geolocation.getCurrentPosition( pos => {
         this.lng = +pos.coords.longitude;
         this.lat = +pos.coords.latitude;
-
       });
     }
   }
