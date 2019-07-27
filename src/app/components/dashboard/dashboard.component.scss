@@ -104,11 +104,16 @@ p.leader-name {
     display: grid;
     grid-template-columns: 90px 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
+    // grid-gap: 10px;
 }
 
 .div-progress-title {
     align-self: end;
+    margin-left: 20px;
+}
+
+.progress-diverted-title {
+    margin-left: 20px;
 }
 
 .progress-card-title {
@@ -162,14 +167,14 @@ a {
     font-size: 12pt;
     color: $font-main-color;
     text-decoration: underline;
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
 }
 
 // Media Query
 
 @media screen and (min-width: 800px) {
     .dashboard-container {
-        grid-template-columns: 350px 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-template: 1fr 1fr;
         padding-left: 10%;
         padding-right: 10%;
