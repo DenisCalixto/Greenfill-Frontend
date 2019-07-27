@@ -13,13 +13,12 @@
 }
 
 
-//Tipography
+//Typography
 
 .store-text a {
   font-size: 20px;  
   color:$font-color1;
-  font-family: $main-font;
-  text-transform: uppercase;
+  font-family: $main-font;  
 }
 
 .store-text p {
@@ -79,7 +78,7 @@ input {
 }
 
 .cards {
-  max-height: 100vh;
+  max-height: 80vh;
   overflow: scroll;
 }
 
