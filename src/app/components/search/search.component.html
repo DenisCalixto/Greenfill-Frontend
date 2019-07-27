@@ -1,7 +1,7 @@
 
   <div class="search">
     <div class="left-panel">
-      
+
         <div class="search-bar">
             <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
                 <button class="search-btn" type="submit" text="GO"
@@ -13,25 +13,32 @@
                 placeholder="Search for zero waste store or items…">
             </form>
             </div>
-
-      <div *ngFor="let search of searchs" class="store-info">
+        <div class="cards">
+      <div *ngFor="let search of searchs; let i=index;" class="store-info">
           <div class="store-text">
             <a (click)="loadStore(search.id)">{{ search.name }}</a>
-            <!-- <div>
+            <div class="addr">
               <img src="../../assets/ic_pin_green.svg" alt="">
               <p>{{ search.address }}</p>
             </div>
-            <div>
+            <div class="schedule">
               <img src="../../assets/ic_schedule.svg" alt="">
-              <p>{{ search.weekdayHours }}</p><br>
-              <p>{{ search.weekendHours }}</p>
-            </div> -->
+              <!-- <p>{{ search.weekdayHours }}</p><br>
+              <p>{{ search.weekendHours }}</p> -->
+              <p>Weekday 8a.m. - 8p.m.</p>
+              <p>Weekend 9a.m. - 8p.m.</p>
+            </div>
           </div>
-          <!-- <div class="store-img">
-              <img [src]="search.image" alt="">
-          </div> -->
+          <div class="store-img">
+              <img *ngIf="(i % 4)==0" src="../../assets/store_s1.png" alt="">
+              <img *ngIf="(i % 4)==1" src="../../assets/store_s2.png" alt="">
+              <img *ngIf="(i % 4)==2" src="../../assets/store_s3.png" alt="">
+              <img *ngIf="(i % 4)==3" src="../../assets/store_s4.png" alt="">
+              <!-- <img [src]="search.image" alt=""> -->
+          </div>
       </div>
     </div>
+  </div>
     <div class="right-panel">
       <app-search-single></app-search-single>
     </div>

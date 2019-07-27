@@ -1,10 +1,10 @@
 <div class="dashboard-container">
   <div class="user-profile">
     <div class="user-img">
-      <img src="../../assets/img_user1@2x.png" alt="">
+      <img src="../../assets/img_team_marinela_color@2x.png" alt="">
     </div>
     <p>
-      Giang Nga
+      {{authService.name}}
     </p>
     <h4>
       Vancouver,BC
@@ -17,16 +17,16 @@
     </h2>
     <div class="leader-user" *ngFor="let leader of leaders; let i=index;">
       <div class="leader-img">
-        <img *ngIf="i==0" src="../../assets/img_user3@2x.png" alt="">
-        <img *ngIf="i==1" src="../../assets/img_user4@2x.png" alt="">
-        <img *ngIf="i==2" src="../../assets/img_user5@2x.png" alt="">
+        <img *ngIf="i==0" src="../../assets/img_team_denis_color@2x.png" alt="">
+        <img *ngIf="i==1" src="../../assets/img_team_june_color@2x.png" alt="">
+        <img *ngIf="i==2" src="../../assets/img_team_marinela_color@2x.png" alt="">
       </div>
       <div class="leader-text">
         <p class="leader-name">
           {{ leader.name }}
         </p>
-        <div>
-          {{ leader.quantity }}
+        <div class="leader-total-div">
+          <p class="leader-total">{{ leader.quantity }}</p>
           <h4>Packaging</h4>
         </div>
       </div>
@@ -44,12 +44,12 @@
             <video autoplay="autoplay" src="../../assets/ic_total_7.mp4" type="video/mp4"></video>
           </div>
           <div class="div-progress-title">
-            <span *ngIf="totalPackaging.total">{{ totalPackaging.total }}</span>
-            <span *ngIf="!totalPackaging.total">0</span>
+            <span class="progress-total" *ngIf="totalPackaging.total">{{ totalPackaging.total }}</span>
+            <span class="progress-total" *ngIf="!totalPackaging.total">0</span>
             <span class="progress-title">Total Packaging</span>
           </div>
-          <p>
-            diverted from the landfill since June 1, 2019
+          <p class="progress-diverted-title">
+            diverted from the landfill since January 1, 2019
           </p>
         </div>
         <div class="progress-share">
@@ -71,9 +71,9 @@
               </a>
             </li>
           </ul>
-        </div>
-        <div class="upload-receipt">
-          <a href="#">Upload your receipt</a>
+          <div class="upload-receipt">
+              <a href="#">Upload your receipt</a>
+          </div>
         </div>
     </div>
 

@@ -13,7 +13,19 @@
 }
 
 
-//Tipography
+//Typography
+
+.store-text a {
+  font-size: 20px;
+  color:$font-color1;
+  font-family: $main-font;
+}
+
+.store-text p {
+  font-size: 16px;
+  color: $font-color3;
+  font-family: $body-font;
+}
 
 //Search Bar
 
@@ -24,7 +36,7 @@
   margin-right: 1rem;
   border: 1px solid $field_border;
   -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.16);
-  border-radius: 50px; 
+  border-radius: 50px;
 }
 
 form {
@@ -53,9 +65,9 @@ input {
 //Store Info
 
 .store-info {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 18px;
 }
+
 
 .store-info:nth-child(even) {
   background-color: $support-bgc1;
@@ -65,6 +77,38 @@ input {
   background-color: $support-bgc1;
 }
 
+.cards {
+  max-height: 80vh;
+  overflow: scroll;
+}
+
+.store-text {
+  margin-left: 20px;
+}
+
+.addr {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.addr p {
+  margin-bottom: 0;
+}
+
+.addr img {
+  margin-right: 12px;
+}
+
+.schedule {
+  display: flex;
+  padding-bottom: 18px;
+}
+
+.store-img {
+  // display: none;
+}
+
 //Media
 
 @media screen and (min-width: 880px) {
@@ -72,6 +116,6 @@ input {
  .search {
    display: grid;
    grid-template-columns: 1fr 2fr;
- } 
+ }
 
 }
