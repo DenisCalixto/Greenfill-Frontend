@@ -68,6 +68,7 @@ a {
 
 .about h1 {
     margin-bottom: 38px;
+    align-self: center;
 }
 
 .about-item {
@@ -78,6 +79,10 @@ a {
 .about-text p {
     display: none;
 
+}
+
+.text {
+    display: grid;
 }
 
 .about-text a {
