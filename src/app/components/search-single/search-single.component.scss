@@ -1,5 +1,10 @@
 @import 'src/scss/variables';
 
+.search-single {
+  position: absolute;
+  z-index: 1;
+}
+
 .picsum-img-wrapper img {
   width: 100%;
   height: auto;
