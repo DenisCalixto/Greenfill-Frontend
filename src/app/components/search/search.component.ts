@@ -62,6 +62,8 @@ export class SearchComponent implements OnInit {
       if (this.router.snapshot.paramMap.get('id')) {
         console.log(this.router.snapshot.paramMap.get('id'));
         this.loadStore(this.router.snapshot.paramMap.get('id'));
+      } else {
+        this.search('');
       }
     }
   }

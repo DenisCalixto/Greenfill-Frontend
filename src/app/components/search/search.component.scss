@@ -21,9 +21,9 @@ agm-map {
 //Typography
 
 .store-text a {
-  font-size: 20px;  
+  font-size: 20px;
   color:$font-color1;
-  font-family: $main-font;  
+  font-family: $main-font;
 }
 
 .store-text p {
@@ -70,7 +70,9 @@ input {
 //Store Info
 
 .store-info {
-  padding-top: 18px;
+  //padding-top: 18px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
 }
 
 
@@ -89,6 +91,7 @@ input {
 
 .store-text {
   margin-left: 20px;
+  align-self: center
 }
 
 .addr {
@@ -107,11 +110,15 @@ input {
 
 .schedule {
   display: flex;
-  padding-bottom: 18px;
+  //padding-bottom: 18px;
 }
 
-.store-img {
-  display: none;
+.schedule img {
+  margin-right: 12px;
+}
+
+.schedule p {
+  margin-bottom: 0;
 }
 
 //Media
