@@ -20,7 +20,7 @@ export interface AuthResponseData {
 export class AuthService {
   user = new Subject<User>();
   userId: string = null;
-  name: string = null;
+  public name: string = null;
 
   constructor(private http: HttpClient, private router: Router) {}
 
