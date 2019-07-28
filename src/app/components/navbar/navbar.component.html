@@ -3,11 +3,15 @@
   <a routerLink="/" class="navbar-brand">
     <img src="../../assets/logo_header.svg" alt="greenfill">
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed">
-    <span class="navbar-toggler-icon">
-      <img src="../../assets/ic_hamburger.svg" alt="greenfill">
-    </span>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed" [ngClass]="isNavbarCollapsed ? 'change':''" >
+    <div class="x-button">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+  </div>
   </button>
+
 
   <div class="collapse navbar-collapse" [ngbCollapse]="!isNavbarCollapsed" id="navbarSupportedContent" (click)="isNavbarCollapsed = !isNavbarCollapsed">
     <ul class="navbar-nav mr-auto">
@@ -35,3 +39,4 @@
     <button class="primaryBtn" *ngIf="!isAuthenticated" routerLink="/login">LOGIN</button>
   </div>
 </nav>
+

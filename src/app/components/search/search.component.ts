@@ -3,9 +3,10 @@ import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
-import { SearchService, Search } from './../../services/search.service';
+import { SearchService, Search, marker } from './../../services/search.service';
 import { SearchSingleComponent } from '../search-single/search-single.component';
 import { Store } from 'src/app/models/Store';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search',
@@ -13,14 +14,46 @@ import { Store } from 'src/app/models/Store';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  lat: any;
+  lng: any;
 
-  constructor(private searchService: SearchService, private router: ActivatedRoute) {}
+  icon = {
+    url: '../../assets/ic_pin@2x.png',
+    scaledSize: {
+      width: 25,
+      height: 34
+    }
+  };
+  onMouseOver(infoWindow,gm){
+    if(gm.lastOpen){
+      gm.lastOpen.close();
+    }
+    gm.lastOpen = infoWindow;
+    infoWindow.open();
+  }
+  onMouseOut(infoWindow,gm) {
+    if (gm.lastOpen) {
+      gm.lastOpen = infoWindow;
+      gm.lastOpen.close();
+    }
+  }
+  constructor(private searchService: SearchService, private router: ActivatedRoute,private http: HttpClient) {
+    if (navigator) {
+      navigator.geolocation.getCurrentPosition( pos => {
+        this.lng = +pos.coords.longitude;
+        this.lat = +pos.coords.latitude;
+      });
+    }
+  }
 
   // Creating a reference which will be used to access data and method from the child component
   @ViewChild(SearchSingleComponent, { static: true } as any) child: SearchSingleComponent;
 
   searchs: Search[] = [];
-
+  markers: marker[] = [];
+  ROOT_URL = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBU-oePatWVKCry-dkFgUNEVNoQGYwqthk&address=';
+  posts: any;
+  zoom: number = 16;
   ngOnInit(): void {
     if (history.state.data) {
       // console.log(history.state.data['searchedText']);
@@ -60,6 +93,26 @@ export class SearchComponent implements OnInit {
         for(const key in resData[0]) {
           this.searchs.push(resData[0][key]);
         }
+        this.markers = [];
+        for(let i=0; i< this.searchs.length; i++){
+
+          this.posts = this.http.get(this.ROOT_URL+this.searchs[i].address
+          );
+          this.posts.subscribe(
+
+            response => {
+              // console.log(response);
+              this.markers.push(response.results[0].geometry.location);
+              // this.markers[i].name= this.searchs[i].name;
+              // console.log(this.markers[i]);
+            });
+        }
+        setTimeout(()=>{
+          for(let i=0;i<this.searchs.length;i++){
+            this.markers[i].name = this.searchs[i].name;
+
+          }
+        },1000);
       },
       errorMessage => {
         console.log(errorMessage);

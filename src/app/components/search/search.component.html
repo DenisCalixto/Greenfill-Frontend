@@ -41,9 +41,54 @@
   </div>
     <div class="right-panel">
       <app-search-single></app-search-single>
+      <div class="search-map">
+        <!-- <iframe width="800" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Langara&output=embed"
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
+          <agm-map
+            #gm
+            [latitude]="lat"
+            [longitude]="lng"
+            [zoom]="zoom"
+            [disableDefaultUI]="false"
+            [zoomControl]="false"
+  
+            >
+  
+            <agm-marker
+  
+            [latitude]="lat"
+            [longitude]="lng"
+  
+  
+            >
+  
+  
+            <agm-info-window>
+              <strong>{{"You are here"}}</strong>
+            </agm-info-window>
+            </agm-marker>
+            <agm-marker
+  
+              *ngFor="let m of markers; let i = index"
+  
+              (mouseOver)="onMouseOver(infoWindow,gm)"
+  
+              [latitude]="m.lat"
+              [longitude]="m.lng"
+              [iconUrl]="icon"
+              (mouseOut)="onMouseOut(infoWindow,gm)"
+          >
+  
+  
+    <agm-info-window #infoWindow>
+      <strong>{{m.name}}</strong>
+      <br>
+  
+    </agm-info-window>
+  
+    </agm-marker>
+    </agm-map>
+      </div>
     </div>
-        <!-- <div class="search-map">
-        <iframe width="800" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Langara&output=embed"
-          frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-      </div>     -->
+    
   </div>
