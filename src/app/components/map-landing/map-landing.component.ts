@@ -185,11 +185,12 @@ export class MapLandingComponent implements OnInit {
   request: any;
   constructor(private http: HttpClient, private router: Router) {
     if (navigator) {
-      navigator.geolocation.getCurrentPosition( pos => {
-        this.lng = +pos.coords.longitude;
-        this.lat = +pos.coords.latitude;
-
-      });
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition( pos => {
+          this.lng = +pos.coords.longitude;
+          this.lat = +pos.coords.latitude;
+        });
+      }
     }
   }
   icon = {
@@ -258,7 +259,9 @@ export class MapLandingComponent implements OnInit {
 
           response => {
             // console.log(response);
+            if (response.results[0].geometry) {
             this.markers.push(response.results[0].geometry.location);
+          }
             // console.log(response.results[0].geometry.location)
 
             //   this.markers[i].name= this.addresses[i].name;
@@ -269,9 +272,11 @@ export class MapLandingComponent implements OnInit {
           }
           setTimeout(()=>{
             for(let i=0;i<this.addresses.length;i++){
-              this.markers[i].name = this.addresses[i].name;
-              this.markers[i].website = this.addresses[i].website;
-              this.markers[i].animation = 'DROP'
+              if (this.addresses[i] && this.markers[i]) {
+                this.markers[i].name = this.addresses[i].name;
+                this.markers[i].website = this.addresses[i].website;
+                this.markers[i].animation = 'DROP'
+              }
             }
           },1000);
         }
