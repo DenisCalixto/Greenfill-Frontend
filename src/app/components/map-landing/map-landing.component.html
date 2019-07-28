@@ -2,8 +2,15 @@
   <p>
       map-landing works!
   </p>
-  <form #landingSearchForm="ngForm">
-    <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required>
-    <button (click)="onTextSearched()">Send Search</button>
-  </form>
+  <div class="search-bar">
+    <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+        <button class="search-btn" type="submit" text="GO"
+        [disabled]="!searchForm.valid">
+        <img src="../../assets/ic_search_btn.svg" alt="">
+      </button>
+      <input type="text" id="searchText" name="searchText"
+        ngModel required
+        placeholder="Search for zero waste store or items…">
+    </form>
+    </div>
 </div>
