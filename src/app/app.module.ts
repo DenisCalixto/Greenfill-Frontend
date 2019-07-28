@@ -33,6 +33,7 @@ import { CanadaProgressChartComponent } from './components/canada-progress-chart
 import { UserProgressChartComponent } from './components/user-progress-chart/user-progress-chart.component';
 import { SearchSingleComponent } from './components/search-single/search-single.component';
 
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,10 @@ import { SearchSingleComponent } from './components/search-single/search-single.
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    ChartsModule
+    ChartsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBU-oePatWVKCry-dkFgUNEVNoQGYwqthk'
+    })
   ],
   providers: [FeaturedStoreService, InfoService, AboutService, SearchService],
   bootstrap: [AppComponent]

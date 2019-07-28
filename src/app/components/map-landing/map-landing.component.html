@@ -1,5 +1,4 @@
 <div class="map-landing">
-
   <div class="search-bar">
     <form #landingSearchForm="ngForm">
       <button class="search-btn" (click)="onTextSearched()">
@@ -8,9 +7,49 @@
       <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required>
     </form>
   </div>
+  <agm-map
+  #gm
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
 
-  <p>
-      map-landing works!
-  </p>
+  [zoomControl]="false"
+  [styles] = "styles"
+  >
+
+  <agm-marker
+
+  [latitude]="lat"
+  [longitude]="lng"
+
+  >
+
+
+  <agm-info-window>
+    <strong>{{"You are here"}}</strong>
+  </agm-info-window>
+</agm-marker>
+  <agm-marker
+
+      *ngFor="let m of markers; let i = index"
+
+      (mouseOver)="onMouseOver(infoWindow,gm)"
+      [animation]= "m.animation"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [iconUrl]="icon"
+      (mouseOut)="onMouseOut(infoWindow,gm)"
+>
+
+
+    <agm-info-window #infoWindow>
+      <strong>{{m.name}}</strong>
+      <br>
+      <strong>{{m.website}}</strong>
+    </agm-info-window>
+
+  </agm-marker>
+</agm-map>
 
 </div>
