@@ -1,15 +1,14 @@
-<div class="search-bar">
-  <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
-      <button class="search-btn" type="submit" text="GO"
-      [disabled]="!searchForm.valid">
-      <img src="../../assets/ic_search_btn.svg" alt="">
-    </button>
-    <input type="text" id="searchText" name="searchText"
-      ngModel required
-      placeholder="Search for zero waste store or items…">
-  </form>
-  </div>
 <div class="map-landing">
+
+  <div class="search-bar">
+    <form #landingSearchForm="ngForm">
+      <button class="search-btn" (click)="onTextSearched()">
+        <img src="../../assets/ic_search_btn.svg" alt="">
+      </button>
+      <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required>
+    </form>
+  </div>
+
   <p>
       map-landing works!
   </p>
