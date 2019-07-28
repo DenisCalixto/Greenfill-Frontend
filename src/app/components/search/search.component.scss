@@ -13,7 +13,7 @@
 }
 
 agm-map {
-  height: 400px;
+  height: 88vh;
   width: 100%;
 }
 
@@ -119,6 +119,8 @@ input {
 
 .schedule p {
   margin-bottom: 0;
+  // display: flex;
+  font-size: 12pt;
 }
 
 //Media
