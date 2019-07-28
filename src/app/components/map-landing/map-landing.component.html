@@ -1,4 +1,12 @@
 <div class="map-landing">
+  <div class="search-bar">
+    <form #landingSearchForm="ngForm">
+      <button class="search-btn" (click)="onTextSearched()">
+        <img src="../../assets/ic_search_btn.svg" alt="">
+      </button>
+      <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required>
+    </form>
+  </div>
   <agm-map
   #gm
   [latitude]="lat"
