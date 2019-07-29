@@ -69,6 +69,11 @@ input {
 
 //Store Info
 
+// .search-single {
+//   position: absolute;
+//   z-index: 1;
+// }
+
 .store-info {
   //padding-top: 18px;
   display: grid;
@@ -85,7 +90,7 @@ input {
 }
 
 .cards {
-  max-height: 80vh;
+  max-height: 73vh;
   overflow: scroll;
 }
 
@@ -119,9 +124,10 @@ input {
 
 .schedule p {
   margin-bottom: 0;
-  // display: flex;
   font-size: 12pt;
 }
+
+
 
 //Media
 
