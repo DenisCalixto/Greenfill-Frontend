@@ -137,4 +137,7 @@ input {
    grid-template-columns: 1fr 2fr;
  }
 
+ .store-text a:hover {
+   color: $font-color2;
+ }
 }
