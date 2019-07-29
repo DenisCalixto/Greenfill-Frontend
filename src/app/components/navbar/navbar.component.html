@@ -32,7 +32,7 @@
       </li>
     </ul>
     <img class="user-img" *ngIf="isAuthenticated" src="../../assets/img_team_{{userImage}}_color@2x.png" alt="">
-    <span class="user-name" *ngIf="isAuthenticated">{{authService.name}}</span>
+    <span class="user-name" *ngIf="isAuthenticated">{{name}}</span>
     <div class="user-arrow" *ngIf="isAuthenticated"></div>
     <!-- <img class="user-arrow" src="../../assets/ic_arrow_down@2x" alt=""> -->
     <!-- <a *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onLogout()">Logout</a> -->
