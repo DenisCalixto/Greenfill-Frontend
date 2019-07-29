@@ -4,7 +4,8 @@
       <img src="../../assets/img_team_marinela_color@2x.png" alt="">
     </div>
     <p>
-      {{authService.name}}
+      {{ authServiceDash.name }}
+      Marinela Poso
     </p>
     <h4>
       Vancouver,BC
@@ -44,8 +45,8 @@
             <video autoplay="autoplay" src="../../assets/ic_total_7.mp4" type="video/mp4"></video>
           </div>
           <div class="div-progress-title">
-            <span class="progress-total" *ngIf="totalPackaging.total">{{ totalPackaging.total }}</span>
-            <span class="progress-total" *ngIf="!totalPackaging.total">0</span>
+            <span class="progress-total" *ngIf="totalPackaging && totalPackaging.total">{{ totalPackaging.total }}</span>
+            <span class="progress-total" *ngIf="!totalPackaging || !totalPackaging.total">0</span>
             <span class="progress-title">Total Packaging</span>
           </div>
           <p class="progress-diverted-title">
