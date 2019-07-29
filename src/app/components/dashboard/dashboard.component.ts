@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   userName: string = null;
   totalPackaging: TotalPackaging;
 
-  constructor(private http: HttpClient, protected authServiceDash: AuthService) {}
+  constructor(private http: HttpClient, public authServiceDash: AuthService) {}
 
   ngOnInit() {
     // NOT WORKING
