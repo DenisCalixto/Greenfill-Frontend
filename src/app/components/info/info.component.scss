@@ -68,7 +68,7 @@ img {
     background-color: #D7F9FA;
 
     display: grid;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: 1fr;
     
 
     // width: 100vw;
@@ -99,7 +99,7 @@ img {
   background-color: white;
 }
 
-div.collapse {
+.card .collapse {
   background-color: white;
   width: 70vw;
   margin-top: -1.5rem;
@@ -150,9 +150,9 @@ div.collapse {
   flex-flow: column wrap;
 }
 
-div.collapse {
+.card .collapse {
   background-color: white;
-  width: 100vw;
+  width: 20vw;
   margin-top: -1.5rem;
   margin-bottom: 1rem;
 }
