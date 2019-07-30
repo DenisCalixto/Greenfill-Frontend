@@ -184,14 +184,16 @@ export class MapLandingComponent implements OnInit {
   lastOpen;
   request: any;
   constructor(private http: HttpClient, private router: Router) {
-    if (navigator) {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition( pos => {
-          this.lng = +pos.coords.longitude;
-          this.lat = +pos.coords.latitude;
-        });
-      }
-    }
+    // if (navigator) {
+    //   if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition( pos => {
+          // this.lng = +pos.coords.longitude;
+          // this.lat = +pos.coords.latitude;
+          this.lat = 49.282573;
+          this.lng = -123.119371;
+    //     });
+    //   }
+    // }
   }
   icon = {
     url: '../../assets/ic_pin@2x.png',

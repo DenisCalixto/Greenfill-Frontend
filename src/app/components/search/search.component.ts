@@ -38,12 +38,16 @@ export class SearchComponent implements OnInit {
     }
   }
   constructor(private searchService: SearchService, private router: ActivatedRoute,private http: HttpClient) {
-    if (navigator) {
-      navigator.geolocation.getCurrentPosition( pos => {
-        this.lng = +pos.coords.longitude;
-        this.lat = +pos.coords.latitude;
-      });
-    }
+    // if (navigator) {
+    //   if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition( pos => {
+          // this.lng = +pos.coords.longitude;
+          // this.lat = +pos.coords.latitude;
+          this.lat = 49.282573;
+          this.lng = -123.119371;
+    //     });
+    //   }
+    // }
   }
 
   // Creating a reference which will be used to access data and method from the child component
