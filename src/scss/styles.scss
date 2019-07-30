@@ -6,6 +6,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i&display=swap');
 
 body{
-  margin: 0; 
+  margin: 0;
   color: $font-main-color;
+}
+
+.navBarWhite
+{
+  background-color: #fff !important;
+  box-shadow: 0 3px 6px #00000016;
 }

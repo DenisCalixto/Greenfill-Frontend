@@ -13,7 +13,8 @@ export class AboutComponent implements OnInit {
     name: '',
     role: '',
     info: '',
-    image: ''
+    image: '',
+    url: ''
   }
   webView: boolean = true;
 
@@ -23,6 +24,6 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.abouts = this.aboutService.getAbouts();
-     
+
   }
 }
