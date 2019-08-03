@@ -96,7 +96,7 @@ a {
     padding: 10px; 
 }
 
-.card {
+.card_team {
     border: 2px solid $suport-bgc3;
     margin-bottom: 30px;
 }
@@ -116,7 +116,7 @@ a {
         margin-bottom: 70px;
     }
 
-    .card {
+    .card_team {
         margin-bottom: 40px;
     }
 }
@@ -149,7 +149,7 @@ a {
         text-decoration: none;
     }
 
-    .card:hover {
+    .card_team:hover {
         border: 2px solid $card_border;
     }
 }

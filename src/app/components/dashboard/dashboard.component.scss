@@ -81,7 +81,7 @@ p.leader-name {
 .leader-total {
     font-family: $main-font;
     color: $font-color2;
-    font-size: 16pt; 
+    font-size: 16pt;
     margin-right: 8px;
 }
 
@@ -148,6 +148,15 @@ p.leader-name {
     // grid-template-columns: 150px 1fr;
     display: flex;
     flex-flow: row wrap;
+}
+
+.upload-receipt button {
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  color: #383A37;
+  text-decoration: underline;
+  border: none;
 }
 
 ul{

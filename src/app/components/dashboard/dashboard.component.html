@@ -1,10 +1,15 @@
 <div class="dashboard-container">
   <div class="user-profile">
-    <div class="user-img">
+    <div *ngIf="authServiceDash.firstName" class="user-img">
+      <img src="../../assets/img_team_{{ authServiceDash.firstName }}_color@2x.png" alt="">
+    </div>
+    <div *ngIf="!authServiceDash.firstName" class="user-img">
       <img src="../../assets/img_team_marinela_color@2x.png" alt="">
     </div>
-    <p>
-      <!-- {{ authServiceDash.name }} -->
+    <p *ngIf="authServiceDash.name">
+      {{ authServiceDash.name }}
+    </p>
+    <p *ngIf="!authServiceDash.name">
       Marinela Poso
     </p>
     <h4>
@@ -18,9 +23,9 @@
     </h2>
     <div class="leader-user" *ngFor="let leader of leaders; let i=index;">
       <div class="leader-img">
-        <img *ngIf="i==0" src="../../assets/img_team_denis_color@2x.png" alt="">
-        <img *ngIf="i==1" src="../../assets/img_team_june_color@2x.png" alt="">
-        <img *ngIf="i==2" src="../../assets/img_team_marinela_color@2x.png" alt="">
+        <img *ngIf="leader.name.indexOf('Denis') !== -1" src="../../assets/img_team_denis_color@2x.png" alt="">
+        <img *ngIf="leader.name.indexOf('June') !== -1" src="../../assets/img_team_june_color@2x.png" alt="">
+        <img *ngIf="leader.name.indexOf('Marinela') !== -1" src="../../assets/img_team_marinela_color@2x.png" alt="">
       </div>
       <div class="leader-text">
         <p class="leader-name">
@@ -41,8 +46,15 @@
         </h2>
         <div class="progress-info">
           <div class="progress-plant">
-            <!-- <img src="../../assets/ic_total_2.gif" alt=""> -->
-            <video autoplay="autoplay" src="../../assets/ic_total_7.mp4" type="video/mp4"></video>
+            <!-- <img *ngIf="!totalPackaging || !totalPackaging.total" src="../../assets/ic_total_2.gif" alt=""> -->
+            <!-- <img *ngIf="totalPackaging && totalPackaging.total && totalPackaging.total == 0" src="../../assets/ic_total_2.gif" alt=""> -->
+            <!-- <video autoplay="autoplay" src="../../assets/ic_total_2.mp4" type="video/mp4"></video> -->
+            <video autoplay="autoplay"
+                    *ngIf="totalPackaging && totalPackaging.total && totalPackaging.total < 200"
+                    src="../../assets/ic_total_7.mp4" type="video/mp4"></video>
+            <video autoplay="autoplay"
+                    *ngIf="totalPackaging && totalPackaging.total && totalPackaging.total >= 200"
+                    src="../../assets/ic_total_8.mp4" type="video/mp4"></video>
           </div>
           <div class="div-progress-title">
             <span class="progress-total" *ngIf="totalPackaging && totalPackaging.total">{{ totalPackaging.total }}</span>
@@ -73,7 +85,8 @@
             </li>
           </ul>
           <div class="upload-receipt">
-              <a href="#">Upload your receipt</a>
+              <button (click)="simulateRefill()">Upload your receipt</button>
+              <!-- <a href="#" (click)="simulateRefill()">Upload your receipt</a> -->
           </div>
         </div>
     </div>
