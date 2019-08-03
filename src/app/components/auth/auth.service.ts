@@ -20,6 +20,7 @@ export interface AuthResponseData {
 export class AuthService {
   user = new Subject<User>();
   userId: string = null;
+  name: string = null;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -83,6 +84,15 @@ export class AuthService {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, userId, token, expirationDate);
     this.userId = userId;
+    if (email.indexOf('denis') !== -1) {
+      this.name = 'Denis Calixto';
+    }
+    if (email.indexOf('costalgia') !== -1) {
+      this.name = 'June Jung';
+    }
+    if (email.indexOf('marinela') !== -1) {
+      this.name = 'Marinela Poso';
+    }
     this.user.next(user);
   }
 

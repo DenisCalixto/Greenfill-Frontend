@@ -3,11 +3,15 @@
   <a routerLink="/" class="navbar-brand">
     <img src="../../assets/logo_header.svg" alt="greenfill">
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed">
-    <span class="navbar-toggler-icon">
-      <img src="../../assets/ic_hamburger.svg" alt="greenfill">
-    </span>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed" [ngClass]="isNavbarCollapsed ? 'change':''" >
+    <div class="x-button">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+  </div>
   </button>
+
 
   <div class="collapse navbar-collapse" [ngbCollapse]="!isNavbarCollapsed" id="navbarSupportedContent" (click)="isNavbarCollapsed = !isNavbarCollapsed">
     <ul class="navbar-nav mr-auto">
@@ -27,9 +31,12 @@
         <a routerLink="/dashboard" class="nav-link" (click)="isNavbarCollapsed = true">Dashboard</a>
       </li>
     </ul>
-    <span *ngIf="isAuthenticated">Giang Nga</span>
-    <img *ngIf="isAuthenticated" src="../../assets/img_user3@2x.png" alt="">
-    <a *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onLogout()">Logout</a>
+    <img class="user-img" *ngIf="isAuthenticated" src="../../assets/img_team_{{userImage}}_color@2x.png" alt="">
+    <span class="user-name" *ngIf="isAuthenticated">{{name}}</span>
+    <div class="user-arrow" *ngIf="isAuthenticated"></div>
+    <!-- <img class="user-arrow" src="../../assets/ic_arrow_down@2x" alt=""> -->
+    <!-- <a *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onLogout()">Logout</a> -->
     <button class="primaryBtn" *ngIf="!isAuthenticated" routerLink="/login">LOGIN</button>
   </div>
 </nav>
+

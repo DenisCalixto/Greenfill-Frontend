@@ -1,9 +1,55 @@
 <div class="map-landing">
-  <p>
-      map-landing works!
-  </p>
-  <form #landingSearchForm="ngForm">
-    <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required>
-    <button (click)="onTextSearched()">Send Search</button>
-  </form>
+  <div class="search-bar">
+    <form #landingSearchForm="ngForm">
+      <button class="search-btn" (click)="onTextSearched()">
+        <img src="../../assets/ic_search_btn.svg" alt="">
+      </button>
+      <input type="text" name="searchText" id="searchText" [(ngModel)]="inputValue" required placeholder="Search for zero waste store or items…">
+    </form>
+  </div>
+  <agm-map
+  #gm
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+
+  [zoomControl]="false"
+  [styles] = "styles"
+  >
+
+  <agm-marker
+
+  [latitude]="lat"
+  [longitude]="lng"
+
+  >
+
+
+  <agm-info-window>
+    <strong>{{"You are here"}}</strong>
+  </agm-info-window>
+</agm-marker>
+  <agm-marker
+
+      *ngFor="let m of markers; let i = index"
+
+      (mouseOver)="onMouseOver(infoWindow,gm)"
+      [animation]= "m.animation"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [iconUrl]="icon"
+      (mouseOut)="onMouseOut(infoWindow,gm)"
+>
+
+
+    <agm-info-window #infoWindow>
+      <strong>{{m.name}}</strong>
+      <br>
+      <strong>{{m.website}}</strong>
+    </agm-info-window>
+
+  </agm-marker>
+</agm-map>
+
 </div>

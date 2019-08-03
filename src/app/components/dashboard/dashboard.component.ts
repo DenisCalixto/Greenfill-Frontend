@@ -1,27 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Leader } from '../../models/Leader';
 import { TotalPackaging } from '../../models/TotalPackaging';
 import { AuthService } from '../auth/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
+  private userSub: Subscription;
+  isAuthenticated = false;
   leaders: Leader[] = [];
-
+  userName: string = null;
   totalPackaging: TotalPackaging;
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, public authServiceDash: AuthService) {}
 
-  ngOnInit(): void {
-    // Send Http request
+  ngOnInit() {
+    // NOT WORKING
+    this.userSub = this.authServiceDash.user.subscribe(user => {
+      this.isAuthenticated = !user ? false : true;
+      this.userName = this.authServiceDash.name;
+    });
+    // NOT WORKING
+
     this.fetchTotalPackaging();
     this.fetchLeaders();
+  }
+
+  ngOnDestroy() {
+    this.userSub.unsubscribe();
   }
 
   private fetchLeaders() {
@@ -45,7 +58,7 @@ export class DashboardComponent implements OnInit {
 
   private fetchTotalPackaging() {
     this.http
-      .get<TotalPackaging>('https://api.greenfill.wmdd.ca/person/' + this.authService.userId + '/totalpackaging')
+      .get<TotalPackaging>('https://api.greenfill.wmdd.ca/person/' + this.authServiceDash.userId + '/totalpackaging')
       .subscribe(totalItem => {
         this.totalPackaging = totalItem;
       });

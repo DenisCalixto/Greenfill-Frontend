@@ -1,5 +1,11 @@
 @import 'src/scss/variables';
 
+.search-single {
+  position: absolute;
+  z-index: 1;
+}
+
+
 .picsum-img-wrapper img {
   width: 100%;
   height: auto;
@@ -8,6 +14,8 @@
 .single-text {
   padding: 20px 30px;
   background-color: $support-bgc1;
+  max-height: 40vh;
+  overflow: scroll;
 }
 
 .single-top {

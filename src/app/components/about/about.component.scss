@@ -2,6 +2,12 @@
 
 //Typography
 
+.text {
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+}
+
 h1 {
     font-family: $main-font;
     color: $font-color1;
