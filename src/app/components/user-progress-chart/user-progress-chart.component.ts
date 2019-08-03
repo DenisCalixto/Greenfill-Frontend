@@ -11,7 +11,7 @@ export class UserProgressChartComponent implements OnInit {
 
   constructor() { }
 
-  public userProgressChartLabels = ['Jan 2019','Feb 2019','Mar 2019','Apr 2019','May 2019','Jun 2019','Jul 2019'];
+  public userProgressChartLabels = ['Feb 2019','Mar 2019','Apr 2019','May 2019','Jun 2019','Jul 2019','Aug 2019'];
   public userProgressChartType = 'line';
   public userProgressChartLegend = false;
   public userProgressChartData = [

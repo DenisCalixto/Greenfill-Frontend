@@ -1,3 +1,3 @@
 export interface TotalPackaging {
-  total: string;
+  total: number;
 }

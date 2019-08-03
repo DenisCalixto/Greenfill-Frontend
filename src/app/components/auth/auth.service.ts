@@ -21,6 +21,8 @@ export class AuthService {
   user = new Subject<User>();
   userId: string = null;
   name: string = null;
+  firstName: string = null;
+  personId: number = null;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -86,12 +88,18 @@ export class AuthService {
     this.userId = userId;
     if (email.indexOf('denis') !== -1) {
       this.name = 'Denis Calixto';
+      this.firstName = 'denis';
+      this.personId = 1;
     }
     if (email.indexOf('costalgia') !== -1) {
       this.name = 'June Jung';
+      this.firstName = 'june';
+      this.personId = 2;
     }
     if (email.indexOf('marinela') !== -1) {
       this.name = 'Marinela Poso';
+      this.firstName = 'marinela';
+      this.personId = 3;
     }
     this.user.next(user);
   }
