@@ -189,8 +189,8 @@ export class MapLandingComponent implements OnInit {
     //     navigator.geolocation.getCurrentPosition( pos => {
           // this.lng = +pos.coords.longitude;
           // this.lat = +pos.coords.latitude;
-          this.lat = 49.282573;
-          this.lng = -123.119371;
+          this.lat = 49.225373;
+          this.lng = -123.110611;
     //     });
     //   }
     // }
